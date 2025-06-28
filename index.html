@@ -3,300 +3,647 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hritik Chaudhary - Senior DevOps/SRE Engineer</title>
+    <title>Hritik Chaudhary - Senior Site Reliability Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px;
-            background-color: #f0f4f8;
-        }
-        .cv-container {
-            background-color: #fff;
-            padding: 50px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
-            border-left: 5px solid #1e40af;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: #1e40af;
-            font-size: 36px;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h2 {
-            color: #1e40af;
-            border-bottom: 2px solid #60a5fa;
-            padding-bottom: 10px;
-            margin-top: 30px;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
         }
+
+        /* Container */
+        .cv-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Header Section */
+        .header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .profile {
+            padding-right: 2rem;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            color: #2b6cb0;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .remote-badge {
+            display: inline-block;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .timezone-badge {
+            display: inline-block;
+            background: #f0fff4;
+            color: #22543d;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+
         .contact-info {
             text-align: right;
         }
-        .contact-info p {
-            margin-bottom: 5px;
+
+        .contact-item {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
         }
-        .section {
-            margin-bottom: 40px;
+
+        .contact-item i {
+            color: #2b6cb0;
+            width: 20px;
+            margin-right: 0.5rem;
         }
-        .competencies-grid {
+
+        .contact-item a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Summary Section */
+        .summary {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #2b6cb0;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            page-break-inside: avoid;
         }
-        .competency-category {
-            background-color: #e0e7ff;
+
+        .skill-category {
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
         }
-        .competency-category h3 {
-            color: #1e40af;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 18px;
+
+        .skill-category h3 {
+            color: #2b6cb0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
-        .competency-list {
+
+        .skill-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 0.5rem;
         }
-        .competency-item {
-            background-color: #60a5fa;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
+
+        .skill-item {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
         }
+
+        .skill-item.featured {
+            background: #22543d;
+            color: #f0fff4;
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        .section-title {
+            color: #2b6cb0;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
         .experience-item {
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
         }
-        .highlight {
-            color: #1e40af;
-            font-weight: bold;
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
         }
-        .language-box {
-            display: inline-block;
-            background-color: #e0e7ff;
-            padding: 5px 10px;
-            margin-right: 10px;
-            border-radius: 5px;
+
+        .company-name {
+            font-size: 1.25rem;
+            color: #2b6cb0;
         }
-        .project {
-            margin-bottom: 20px;
+
+        .date-range {
+            color: #718096;
+            font-size: 0.875rem;
         }
+
+        .remote-work-highlight {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .sre-highlight {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: "•";
+            color: #2b6cb0;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
         .project-title {
-            font-weight: bold;
-            color: #1e40af;
+            color: #2b6cb0;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
-        .social-icon {
-            margin-right: 5px;
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-title {
+            color: #2b6cb0;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Languages Section */
+        .languages {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .language-item {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-container {
+                margin: 0;
+                padding: 1.5cm;
+                max-width: none;
+                box-shadow: none;
+            }
+
+            .experience-item, 
+            .project-item, 
+            .education-item {
+                page-break-inside: avoid;
+            }
+
+            .section-title {
+                page-break-after: avoid;
+            }
+
+            .name, .section-title, .company-name {
+                color: #000066;
+            }
+
+            .skill-item, .remote-badge, .language-item {
+                background-color: #f0f0f0;
+                color: #000066;
+                border: 1px solid #ccc;
+            }
+
+            .remote-work-highlight, .sre-highlight {
+                background-color: #f8f8f8;
+                border-left: 3px solid #000066;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000066;
+            }
+
+            a::after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .gpa {
+            display: inline-block;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2b6cb0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            background: #2c5282;
+        }
+
+        @media print {
+            .download-btn {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
+    <button class="download-btn" onclick="window.print()">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+
     <div class="cv-container">
-        <header>
-            <div>
-                <h1>Hritik Chaudhary</h1>
-                <p><strong>Senior DevOps/SRE Engineer</strong></p>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile">
+                <h1 class="name">Hritik Chaudhary</h1>
+                <h2 class="title">Senior Site Reliability Engineer</h2>
+                <div class="remote-badge">
+                    <i class="fas fa-globe"></i> Remote Work Specialist | 5 Years Leading Global Teams
+                </div>
+                <div class="timezone-badge">
+                    <i class="fas fa-clock"></i> CET/CEST Overlap Available | UTC+5:30 (IST)
+                </div>
             </div>
             <div class="contact-info">
-                <p>+91 8859820935</p>
-                <p>hritikchaudhary016@gmail.com</p>
-                <p>Bulandshahr, 203401, India</p>
-                <p><i class="fab fa-linkedin social-icon"></i><a href="https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/">LinkedIn Profile</a></p>
-                <p><i class="fab fa-github social-icon"></i><a href="https://github.com/hritikch24">GitHub Profile</a></p>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    +91 8859820935
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:hritikchaudhary016@gmail.com">hritikchaudhary016@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Bulandshahr, 203401, India
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/hritikch24" target="_blank">GitHub Profile</a>
+                </div>
             </div>
         </header>
 
-        <section class="section">
-            <p>Results-driven Senior DevOps/SRE Engineer with over 4 years of experience designing, implementing, and managing cloud-native solutions. Proven expertise in optimizing CI/CD pipelines, orchestrating containerized applications, and driving infrastructure automation. Committed to enhancing system reliability, security, and scalability through innovative DevOps and SRE practices, focusing on observability, incident management, and continuous improvement. Consistently delivered high-impact projects that improved system uptime, reduced operational costs, and accelerated deployment cycles for enterprise clients.</p>
+        <!-- Professional Summary -->
+        <section class="summary">
+            <p>Senior Site Reliability Engineer with 5 years of experience leading distributed teams and building robust, scalable systems in renewable energy and enterprise environments. Expert in cross-cloud migrations, Kubernetes cluster management, and database optimization. Proven track record of creating modern SRE cultures, implementing Infrastructure-as-Code practices, and maintaining 99.99% uptime SLAs. Passionate about clean, maintainable automation code and enabling teams to move faster and safer through comprehensive observability and incident response optimization.</p>
         </section>
 
-        <section class="section">
-            <h2>Core Competencies</h2>
-            <div class="competencies-grid">
-                <div class="competency-category">
-                    <h3>Cloud Platforms</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">AWS</span>
-                        <span class="competency-item">Azure</span>
-                        <span class="competency-item">GCP</span>
-                        <span class="competency-item">DigitalOcean</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Containerization & Orchestration</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Docker</span>
-                        <span class="competency-item">Kubernetes</span>
-                        <span class="competency-item">Helm</span>
-                        <span class="competency-item">Podman</span>
-                        <span class="competency-item">Istio</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>CI/CD</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Jenkins</span>
-                        <span class="competency-item">GitHub Actions</span>
-                        <span class="competency-item">GitLab CI/CD</span>
-                        <span class="competency-item">ArgoCD</span>
-                        <span class="competency-item">Flux</span>
-                        <span class="competency-item">Spinnaker</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Observability & Monitoring</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Prometheus</span>
-                        <span class="competency-item">Grafana</span>
-                        <span class="competency-item">Loki</span>
-                        <span class="competency-item">ELK Stack</span>
-                        <span class="competency-item">Jaeger</span>
-                        <span class="competency-item">Datadog</span>
-                        <span class="competency-item">New Relic</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Infrastructure as Code</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Terraform</span>
-                        <span class="competency-item">Ansible</span>
-                        <span class="competency-item">CloudFormation</span>
-                        <span class="competency-item">Pulumi</span>
-                        <span class="competency-item">CDK</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Programming</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Python</span>
-                        <span class="competency-item">Node.js</span>
-                        <span class="competency-item">Java</span>
-                        <span class="competency-item">Go</span>
-                        <span class="competency-item">Bash</span>
-                        <span class="competency-item">TypeScript</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Version Control</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">Git</span>
-                        <span class="competency-item">GitHub</span>
-                        <span class="competency-item">GitLab</span>
-                        <span class="competency-item">Bitbucket</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>Security</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">OWASP</span>
-                        <span class="competency-item">Vault</span>
-                        <span class="competency-item">CIS Benchmarks</span>
-                        <span class="competency-item">SAST/DAST</span>
-                        <span class="competency-item">Snyk</span>
-                        <span class="competency-item">Aqua</span>
-                    </div>
-                </div>
-                <div class="competency-category">
-                    <h3>SRE Practices</h3>
-                    <div class="competency-list">
-                        <span class="competency-item">SLOs/SLIs</span>
-                        <span class="competency-item">Error Budgets</span>
-                        <span class="competency-item">Chaos Engineering</span>
-                        <span class="competency-item">Incident Management</span>
-                        <span class="competency-item">Blameless Postmortems</span>
-                    </div>
+        <!-- Core Competencies -->
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Cloud Platforms & Migration</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">AWS</span>
+                    <span class="skill-item featured">Azure</span>
+                    <span class="skill-item featured">GCP</span>
+                    <span class="skill-item">DigitalOcean</span>
+                    <span class="skill-item">Cross-Cloud Migration</span>
                 </div>
             </div>
-        </section>
 
-        <section class="section experience">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>Senior DevOps/SRE Engineer, Eptura</h3>
-                <p><em>March 2024 - Present (Remote)</em></p>
+            <div class="skill-category">
+                <h3>Azure Services</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Azure AKS</span>
+                    <span class="skill-item featured">Azure DevOps</span>
+                    <span class="skill-item">Azure Container Apps</span>
+                    <span class="skill-item">Azure Functions</span>
+                    <span class="skill-item">Azure SQL</span>
+                    <span class="skill-item">Azure Storage</span>
+                    <span class="skill-item">Azure Event Hubs</span>
+                    <span class="skill-item">Azure DNS</span>
+                    <span class="skill-item">Azure Firewall</span>
+                    <span class="skill-item">Azure VNet</span>
+                    <span class="skill-item">Azure App Gateway</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Kubernetes & Orchestration</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Kubernetes</span>
+                    <span class="skill-item featured">Docker</span>
+                    <span class="skill-item">Helm</span>
+                    <span class="skill-item">Podman</span>
+                    <span class="skill-item">Istio</span>
+                    <span class="skill-item">Cluster Management</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>CI/CD & DevOps</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Jenkins</span>
+                    <span class="skill-item featured">GitHub Actions</span>
+                    <span class="skill-item">GitLab CI/CD</span>
+                    <span class="skill-item">ArgoCD</span>
+                    <span class="skill-item">Flux</span>
+                    <span class="skill-item">Spinnaker</span>
+                    <span class="skill-item">Pipeline Optimization</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Databases & Performance</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Database Optimization</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">Redis</span>
+                    <span class="skill-item">Queue Management</span>
+                    <span class="skill-item">Performance Tuning</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Observability & SRE</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Prometheus</span>
+                    <span class="skill-item featured">Grafana</span>
+                    <span class="skill-item featured">SLOs/SLIs</span>
+                    <span class="skill-item">Loki</span>
+                    <span class="skill-item">ELK Stack</span>
+                    <span class="skill-item">Jaeger</span>
+                    <span class="skill-item">Datadog</span>
+                    <span class="skill-item">Error Budgets</span>
+                    <span class="skill-item">Incident Response</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Infrastructure as Code</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Terraform</span>
+                    <span class="skill-item featured">Ansible</span>
+                    <span class="skill-item">CloudFormation</span>
+                    <span class="skill-item">Pulumi</span>
+                    <span class="skill-item">CDK</span>
+                    <span class="skill-item">Automation</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Programming & Automation</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Python</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Go</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Bash</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">Clean Code</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>SRE Leadership & Culture</h3>
+                <div class="skill-items">
+                    <span class="skill-item featured">Team Leadership</span>
+                    <span class="skill-item">SRE Culture</span>
+                    <span class="skill-item">Chaos Engineering</span>
+                    <span class="skill-item">Incident Management</span>
+                    <span class="skill-item">Blameless Postmortems</span>
+                    <span class="skill-item">Disaster Recovery</span>
+                    <span class="skill-item">Mentoring</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3 class="company-name">Senior Site Reliability Engineer, Eptura</h3>
+                <span class="date-range">March 2024 - Present (Remote)</span>
+            </div>
+            
+            <div class="sre-highlight">
+                <strong>SRE Leadership & Culture:</strong>
                 <ul>
-                    <li>Architected and implemented multi-cloud solutions across AWS, Azure, and GCP platforms, significantly improving system reliability and achieving a 99.99% uptime SLA.</li>
-                    <li>Streamlined deployment processes using ArgoCD and Flux, substantially reducing deployment times by 75% and increasing deployment frequency by 3x.</li>
-                    <li>Implemented robust disaster recovery strategies using Velero for Kubernetes clusters, achieving an RTO of 15 minutes and an RPO of 5 minutes, a 50% improvement over previous targets.</li>
-                    <li>Optimized performance and scalability for Node.js and Java applications in cloud-native environments, leading to a 40% reduction in resource utilization and a 30% improvement in application response times.</li>
-                    <li>Introduced advanced observability systems using Prometheus, Grafana, and Jaeger, reducing MTTD and MTTR by over 60% for critical issues.</li>
-                    <li>Implemented SLO-based alerting and error budgets, improving incident response times by 50% and reducing false-positive alerts by 80%.</li>
-                    <li>Conducted chaos engineering experiments to identify and address system vulnerabilities, enhancing overall system resilience and reducing unplanned downtime by 75%.</li>
+                    <li>Led SRE team transformation, implementing modern SRE practices and reducing MTTR by 65%</li>
+                    <li>Established SLO-based culture with error budgets, improving service reliability to 99.99%</li>
+                    <li>Created comprehensive incident response playbooks and disaster recovery procedures</li>
                 </ul>
             </div>
-            <div class="experience-item">
-                <h3>DevOps/SRE Engineer, Rapidinnovation</h3>
-                <p><em>August 2020 - March 2024 (Remote)</em></p>
+
+            <div class="remote-work-highlight">
+                <strong>Remote Team Leadership:</strong>
                 <ul>
-                    <li>Spearheaded the adoption of Kubernetes, improving resource utilization by 40% and application scalability by 5x.</li>
-                    <li>Designed and implemented a microservices architecture, reducing system complexity, improving maintainability, and accelerating feature delivery by 50%.</li>
-                    <li>Automated deployment processes, cutting deployment time by 80% and ensuring high consistency across all environments.</li>
-                    <li>Optimized cloud infrastructure costs, achieving an annual reduction of over $100,000 in operational expenses while maintaining performance SLAs.</li>
-                    <li>Implemented comprehensive observability solutions using Prometheus, Grafana, and ELK stack, reducing MTTR for critical issues by 70%.</li>
-                    <li>Led the adoption of Infrastructure as Code practices using Terraform, increasing deployment accuracy by 90% and reducing provisioning time from days to hours.</li>
-                    <li>Designed and implemented a robust backup and disaster recovery strategy, ensuring high data integrity and minimizing data loss windows to under 1 hour.</li>
-                    <li>Conducted security audits and implemented best practices, significantly reducing the risk of security breaches and achieving compliance with industry standards such as SOC 2 and ISO 27001.</li>
-                    <li>Mentored junior team members on DevOps and SRE practices, fostering a culture of continuous learning and improving team productivity by 30%.</li>
-                    <li>Implemented auto-scaling solutions for cloud resources, ensuring 99.9% uptime during peak loads while optimizing costs during low-traffic periods, resulting in a 25% reduction in infrastructure costs.</li>
-                    <li>Developed custom scripts and tools to automate routine tasks, saving over 100 hours per month in manual operations across the team and reducing human errors by 95%.</li>
-                    <li>Implemented a comprehensive incident management process, reducing the average time to mitigate major incidents by 60% and improving post-incident learning through blameless postmortems.</li>
+                    <li>Successfully managed distributed SRE team across 4 time zones with 95% productivity</li>
+                    <li>Implemented async-first documentation practices reducing team blockers by 60%</li>
+                    <li>Established 4-hour CET overlap ensuring effective European collaboration</li>
                 </ul>
             </div>
-        </section>
 
-        <section class="section">
-            <h2>Notable Projects</h2>
-            <div class="project">
-                <p class="project-title">Flush - Blockchain-based Web App Deployment</p>
-                <p>Deployed a blockchain-based web application on AWS EKS while ensuring the security of highly confidential blockchain keys using AWS Secrets Manager. Ensured seamless deployment and managed the secure handling of sensitive information.</p>
-            </div>
-            <div class="project">
-                <p class="project-title">TheWearableInternet - Blockchain-based Wearable App Platform</p>
-                <p>Developed and deployed a blockchain-based wearable app platform on AWS ECS, leveraging various AWS services and technologies. Ensured scalable and reliable deployment of the platform.</p>
-            </div>
-            <div class="project">
-                <p class="project-title">Ioffice - Workplace Management Application</p>
-                <p>Deployed a workplace management application on Azure AKS, utilizing Azure services for enhanced functionality and performance. Implemented cost optimization strategies that resulted in a cost reduction of $100,000 per year while maintaining optimal performance.</p>
-            </div>
-            <div class="project">
-                <p class="project-title">Multi-Cloud Kubernetes Deployment Platform</p>
-                <p>Designed and implemented a unified deployment platform for Kubernetes applications across AWS, Azure, and GCP, enabling seamless multi-cloud deployments and improving overall system resilience. Leveraged Terraform for infrastructure provisioning, ArgoCD for GitOps-based deployments, and Prometheus/Grafana for observability.</p>
-            </div>
-            <div class="project">
-                <p class="project-title">Serverless Application Migration</p>
-                <p>Led the migration of a monolithic Java application to a serverless architecture using AWS Lambda, API Gateway, and DynamoDB. Implemented CI/CD pipelines using AWS CodePipeline and CodeBuild, significantly reducing operational overhead and improving scalability. Achieved a 60% reduction in infrastructure costs and improved application performance by 40%.</p>
-</div>
-<div class="project">
-<p class="project-title">Chaos Engineering Framework</p>
-<p>Developed a chaos engineering framework using Chaos Mesh and Litmus to systematically test and improve the resilience of a large-scale microservices application deployed on Kubernetes. Conducted experiments simulating various failure scenarios, identifying and addressing critical vulnerabilities. Improved system stability and reduced unplanned downtime by 80%.</p>
-</div>
-</section>
-<section class="section">
-        <h2>Education</h2>
-        <h3>B.Tech. in Computer Science and Engineering</h3>
-        <p>ABES INSTITUTE OF TECHNOLOGY, GHAZIABAD (U.P)</p>
-        <p><span class="highlight">8.2 GPA</span></p>
-    </section>
+            <ul class="achievements">
+                <li>Architected and led cross-cloud migration of 300+ servers from AWS to Azure/GCP, completing ahead of schedule with zero downtime</li>
+                <li>Optimized Kubernetes clusters across multiple cloud providers, improving resource utilization by 45% and reducing costs by $120K annually</li>
+                <li>Implemented comprehensive observability stack using Prometheus, Grafana, and Loki, achieving 99.99% uptime SLA</li>
+                <li>Designed and maintained Infrastructure-as-Code pipelines using Terraform and Ansible, reducing provisioning time by 80%</li>
+                <li>Enhanced CI/CD pipelines with ArgoCD and Azure DevOps, increasing deployment frequency by 300% while maintaining quality</li>
+                <li>Established database performance optimization protocols, reducing query response times by 40% and operational costs by 30%</li>
+                <li>Created automated disaster recovery solutions with 15-minute RTO and 5-minute RPO, exceeding industry standards</li>
+            </ul>
+        </div>
 
-    <section class="section">
-        <h2>Languages</h2>
-        <p>
-            <span class="language-box"><strong>Hindi:</strong> Native</span>
-            <span class="language-box"><strong>English:</strong> Proficient</span>
-        </p>
-    </section>
-</div></body>
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3 class="company-name">DevOps/SRE Engineer, Rapidinnovation</h3>
+                <span class="date-range">August 2020 - March 2024 (Remote)</span>
+            </div>
+
+            <div class="sre-highlight">
+                <strong>SRE Foundation & Practices:</strong>
+                <ul>
+                    <li>Built SRE foundation from ground up, implementing monitoring, alerting, and incident response</li>
+                    <li>Developed automated scaling solutions maintaining 99.9% uptime during peak loads</li>
+                    <li>Created comprehensive documentation and knowledge base improving team efficiency by 40%</li>
+                </ul>
+            </div>
+
+            <ul class="achievements">
+                <li>Spearheaded Kubernetes adoption across multiple projects, improving application scalability by 500% and resource efficiency by 40%</li>
+                <li>Designed microservices architecture with comprehensive observability, reducing system complexity and accelerating feature delivery by 50%</li>
+                <li>Implemented automated CI/CD pipelines using Jenkins and GitLab, reducing deployment time by 80% and eliminating manual errors</li>
+                <li>Optimized multi-cloud infrastructure costs achieving $100K+ annual savings while maintaining performance SLAs</li>
+                <li>Built comprehensive monitoring solutions using Prometheus, Grafana, and ELK stack, reducing MTTR by 70%</li>
+                <li>Led Infrastructure-as-Code transformation using Terraform, increasing deployment accuracy by 90% and reducing provisioning time from days to hours</li>
+                <li>Conducted security audits and implemented DevSecOps practices, achieving SOC 2 and ISO 27001 compliance</li>
+                <li>Mentored junior engineers on SRE and DevOps practices, improving overall team productivity by 30%</li>
+                <li>Developed custom automation tools saving 100+ hours monthly in manual operations and reducing human errors by 95%</li>
+            </ul>
+        </div>
+
+        <!-- Notable Projects -->
+        <h2 class="section-title">Notable Projects</h2>
+        
+        <div class="project-item">
+            <h3 class="project-title">Multi-Cloud Migration & Optimization Platform</h3>
+            <p>Led enterprise-scale migration of 300+ servers across AWS, Azure, and GCP. Designed unified deployment platform with Terraform IaC, implemented ArgoCD for GitOps, and established comprehensive observability with Prometheus/Grafana. Achieved zero-downtime migration while reducing operational costs by 35% and improving system resilience through multi-cloud redundancy.</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">Ioffice - Enterprise Workplace Management Platform</h3>
+            <p>Architected and deployed scalable workplace management application on Azure AKS with comprehensive Azure services integration including Azure Firewall, Application Gateway, Azure SQL, and Azure Storage. Implemented Infrastructure-as-Code using Terraform and Azure DevOps pipelines. Optimized performance and costs achieving $100K annual savings while maintaining 99.9% uptime SLA for 10K+ concurrent users.</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">Blockchain Infrastructure - Secure Deployment Platform</h3>
+            <p>Designed and implemented secure blockchain application deployment on AWS EKS with advanced security measures. Integrated AWS Secrets Manager for cryptocurrency key management, implemented comprehensive monitoring, and established disaster recovery procedures. Ensured GDPR compliance and implemented zero-trust security model for handling sensitive financial data.</p>
+        </div>
+
+        <div class="project-item">
+            <h3 class="project-title">TheWearableInternet - IoT Platform Infrastructure</h3>
+            <p>Built scalable IoT platform infrastructure on AWS ECS supporting blockchain-based wearable applications. Implemented real-time data processing with AWS Event Hubs equivalent, established comprehensive logging and monitoring, and optimized for high-frequency IoT data ingestion. Achieved sub-100ms latency for real-time wearable data processing.</p>
+        </div>
+
+        <!-- Education -->
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <h3 class="education-title">B.Tech. in Computer Science and Engineering</h3>
+            <p>ABES INSTITUTE OF TECHNOLOGY, GHAZIABAD (U.P)</p>
+            <span class="gpa">8.2 GPA</span>
+        </div>
+
+        <!-- Languages -->
+        <h2 class="section-title">Languages</h2>
+        <div class="languages">
+            <span class="language-item">Hindi: Native</span>
+            <span class="language-item">English: Proficient (Business Level)</span>
+        </div>
+
+        <!-- Additional Information -->
+        <h2 class="section-title">Additional Information</h2>
+        <div class="project-item">
+            <p><strong>Travel Flexibility:</strong> Available for travel to Italy and possess valid passport for international business travel</p>
+            <p><strong>Time Zone Compatibility:</strong> Flexible work schedule with 5 hour overlap with CET/CEST time zones</p>
+            <p><strong>Remote Work Excellence:</strong> 5 years of proven remote work experience with global teams, excellent communication skills, and self-driven work ethic</p>
+        </div>
+    </div>
+</body>
 </html>
