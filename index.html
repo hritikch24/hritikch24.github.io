@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hritik Chaudhary - Senior Site Reliability Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Hritik Chaudhary - DevOps Lead & Senior SRE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,633 +14,1267 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+            background: radial-gradient(ellipse at top, #0c0c0c, #000000);
+            color: #00ff00;
             line-height: 1.6;
-            color: #2d3748;
-            background-color: #f7fafc;
+            overflow-x: hidden;
         }
 
-        /* Container */
-        .cv-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
         }
 
-        /* Header Section */
-        .header {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #e2e8f0;
+        ::-webkit-scrollbar-track {
+            background: #111;
         }
 
-        .profile {
-            padding-right: 2rem;
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #00ff00, #00ffff);
+            border-radius: 6px;
+        }
+
+        /* Matrix Background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Terminal Header */
+        .terminal-header {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 3px solid #00ff00;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+        }
+
+        .terminal-top {
+            background: linear-gradient(135deg, #333, #444);
+            padding: 15px 20px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .btn.close { background: radial-gradient(circle, #ff6b6b, #ff5252); }
+        .btn.minimize { background: radial-gradient(circle, #ffd93d, #ffb300); }
+        .btn.maximize { background: radial-gradient(circle, #6bcf7f, #4caf50); }
+
+        .terminal-title {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+
+        .terminal-content {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text {
+            text-align: center;
         }
 
         .name {
-            font-size: 2.5rem;
-            color: #2b6cb0;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00ffff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
         }
 
         .title {
-            font-size: 1.25rem;
-            color: #4a5568;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: #ffff00;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
-        .remote-badge {
-            display: inline-block;
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
+        .subtitle {
+            color: #00ff00;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .timezone-badge {
-            display: inline-block;
-            background: #f0fff4;
-            color: #22543d;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            margin-left: 0.5rem;
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
-        .contact-info {
-            text-align: right;
+        .stat-item {
+            text-align: center;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid #00ff00;
         }
 
-        .contact-item {
-            margin-bottom: 0.5rem;
-            color: #4a5568;
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ffff;
+            display: block;
         }
 
-        .contact-item i {
-            color: #2b6cb0;
-            width: 20px;
-            margin-right: 0.5rem;
+        .stat-label {
+            font-size: 0.8rem;
+            color: #ffff00;
         }
 
-        .contact-item a {
-            color: #2b6cb0;
-            text-decoration: none;
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            margin: 30px 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid rgba(0, 255, 0, 0.3);
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Summary Section */
-        .summary {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #f8fafc;
+        .nav-item {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 2px solid #00ff00;
+            padding: 12px 20px;
             border-radius: 8px;
-            border-left: 4px solid #2b6cb0;
+            color: #00ff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: linear-gradient(135deg, #00ff00, #00ffff);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin: 30px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 42, 42, 0.8));
+            backdrop-filter: blur(15px);
+            border: 2px solid #00ff00;
+            border-radius: 15px;
+            padding: 40px;
+            display: none;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            color: #00ffff;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #ffff00;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.8));
+            border: 2px solid #00ff00;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+            border-color: #00ffff;
+        }
+
+        .card-title {
+            color: #00ffff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-subtitle {
+            color: #ffff00;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Leadership badges */
+        .leadership-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .leadership-badge {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .team-size {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00ffff;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #00ffff;
+        }
+
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-item {
+            text-align: center;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 15px 10px;
+            border-radius: 8px;
+            border: 1px solid #00ff00;
+        }
+
+        .metric-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #00ffff;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: #ffff00;
+            margin-top: 5px;
+        }
+
+        /* Experience Cards */
+        .experience-card {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.8));
+            border: 2px solid #00ff00;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 6px solid #00ffff;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .company-name {
+            color: #00ffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .company-subtitle {
+            color: #ffff00;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .duration {
+            color: #00ff00;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .role-description {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            font-style: italic;
+            background: rgba(0, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #00ffff;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .achievements li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #e0e0e0;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            color: #00ff00;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-            page-break-inside: avoid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .skill-category {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.8));
+            border: 2px solid #00ff00;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+            border-color: #00ffff;
+            box-shadow: 0 5px 20px rgba(0, 255, 0, 0.2);
         }
 
         .skill-category h3 {
-            color: #2b6cb0;
-            margin-bottom: 1rem;
+            color: #ffff00;
+            margin-bottom: 15px;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .skill-items {
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
-        .skill-item {
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 0.25rem 0.75rem;
+        .skill-tag {
+            background: #2a2a2a;
+            color: #00ff00;
+            padding: 6px 12px;
             border-radius: 15px;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
+            border: 1px solid #00ff00;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .skill-item.featured {
-            background: #22543d;
-            color: #f0fff4;
+        .skill-tag:hover {
+            background: #00ff00;
+            color: #000;
+        }
+
+        .skill-tag.expert {
+            background: #00ff00;
+            color: #000;
             font-weight: 600;
         }
 
-        /* Experience Section */
-        .section-title {
-            color: #2b6cb0;
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
+        /* Project Cards */
+        .project-card {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.8));
+            border: 2px solid #00ff00;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
         }
 
-        .experience-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-
-        .company-name {
-            font-size: 1.25rem;
-            color: #2b6cb0;
-        }
-
-        .date-range {
-            color: #718096;
-            font-size: 0.875rem;
-        }
-
-        .remote-work-highlight {
-            background: #f0fff4;
-            border-left: 4px solid #48bb78;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .sre-highlight {
-            background: #fff5f5;
-            border-left: 4px solid #e53e3e;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .achievements {
-            list-style: none;
-        }
-
-        .achievements li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .achievements li::before {
-            content: "•";
-            color: #2b6cb0;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Projects Section */
-        .project-item {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 0, 0.2);
+            border-color: #00ffff;
         }
 
         .project-title {
-            color: #2b6cb0;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            color: #ffff00;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
-        /* Education Section */
-        .education-item {
-            margin-bottom: 1.5rem;
+        .project-tech {
+            color: #00ffff;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
-        .education-title {
-            color: #2b6cb0;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .project-results {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
         }
 
-        /* Languages Section */
-        .languages {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .language-item {
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 0.5rem 1rem;
+        .contact-item {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.8));
+            border: 2px solid #00ff00;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: #00ffff;
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 255, 0.1));
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #00ff00;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            color: #ffff00;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 255, 0.05));
+            border: 2px solid rgba(0, 255, 0, 0.5);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .highlight-title {
+            color: #00ffff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Code-like styling for technical details */
+        .tech-details {
+            background: #000;
+            border: 1px solid #00ff00;
             border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
         }
 
-        /* Print Styles */
-        @media print {
-            body {
-                background-color: white;
-                margin: 0;
-                padding: 0;
+        .tech-details .keyword {
+            color: #00ffff;
+        }
+
+        .tech-details .value {
+            color: #ffff00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terminal-header {
+                margin: 10px;
             }
 
-            .cv-container {
-                margin: 0;
-                padding: 1.5cm;
-                max-width: none;
-                box-shadow: none;
+            .name {
+                font-size: 2.2rem;
             }
 
-            .experience-item, 
-            .project-item, 
-            .education-item {
-                page-break-inside: avoid;
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .content-section {
+                margin: 15px;
+                padding: 25px;
             }
 
             .section-title {
-                page-break-after: avoid;
+                font-size: 1.8rem;
             }
 
-            .name, .section-title, .company-name {
-                color: #000066;
-            }
-
-            .skill-item, .remote-badge, .language-item {
-                background-color: #f0f0f0;
-                color: #000066;
-                border: 1px solid #ccc;
-            }
-
-            .remote-work-highlight, .sre-highlight {
-                background-color: #f8f8f8;
-                border-left: 3px solid #000066;
-            }
-
-            a {
-                text-decoration: none;
-                color: #000066;
-            }
-
-            a::after {
-                content: " (" attr(href) ")";
-                font-size: 0.8em;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .contact-info {
-                text-align: center;
-            }
-
-            .skills-grid {
+            .card-grid {
                 grid-template-columns: 1fr;
             }
 
-            .experience-header {
+            .company-header {
                 flex-direction: column;
-                text-align: center;
             }
-        }
 
-        .gpa {
-            display: inline-block;
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
+            .stats-row {
+                gap: 20px;
+            }
 
-        .download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #2b6cb0;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            z-index: 1000;
-        }
-
-        .download-btn:hover {
-            background: #2c5282;
-        }
-
-        @media print {
-            .download-btn {
-                display: none;
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Matrix Background -->
+    <canvas class="matrix-bg" id="matrix"></canvas>
 
-    <div class="cv-container">
-        <!-- Header Section -->
-        <header class="header">
-            <div class="profile">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+        <div class="terminal-top">
+            <div class="terminal-buttons">
+                <div class="btn close"></div>
+                <div class="btn minimize"></div>
+                <div class="btn maximize"></div>
+            </div>
+            <div class="terminal-title">hritik@devops-lead:~$ whoami --leadership</div>
+        </div>
+        <div class="terminal-content">
+            <div class="hero-text">
                 <h1 class="name">Hritik Chaudhary</h1>
-                <h2 class="title">Senior Site Reliability Engineer</h2>
-                <div class="remote-badge">
-                    <i class="fas fa-globe"></i> Remote Work Specialist | 5 Years Leading Global Teams
-                </div>
-                <div class="timezone-badge">
-                    <i class="fas fa-clock"></i> CET/CEST Overlap Available | UTC+5:30 (IST)
-                </div>
-            </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    +91 8859820935
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:hritikchaudhary016@gmail.com">hritikchaudhary016@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Bulandshahr, 203401, India
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/" target="_blank">LinkedIn Profile</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/hritikch24" target="_blank">GitHub Profile</a>
+                <p class="title">DevOps Lead & Senior SRE Engineer</p>
+                <p class="subtitle">
+                    → Leading high-performing DevOps teams to deliver scalable infrastructure<br>
+                    → 4+ years of technical leadership driving digital transformation<br>
+                    → Proven track record: $280K+ cost savings, 99.99% uptime, 15+ engineers mentored
+                </p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Team Members Led</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$280K+</span>
+                        <span class="stat-label">Cost Savings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Servers Migrated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99.99%</span>
+                        <span class="stat-label">Uptime SLA</span>
+                    </div>
                 </div>
             </div>
-        </header>
-
-        <!-- Professional Summary -->
-        <section class="summary">
-            <p>Senior Site Reliability Engineer with 5 years of experience leading distributed teams and building robust, scalable systems in renewable energy and enterprise environments. Expert in cross-cloud migrations, Kubernetes cluster management, and database optimization. Proven track record of creating modern SRE cultures, implementing Infrastructure-as-Code practices, and maintaining 99.99% uptime SLAs. Passionate about clean, maintainable automation code and enabling teams to move faster and safer through comprehensive observability and incident response optimization.</p>
-        </section>
-
-        <!-- Core Competencies -->
-        <h2 class="section-title">Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Cloud Platforms & Migration</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">AWS</span>
-                    <span class="skill-item featured">Azure</span>
-                    <span class="skill-item featured">GCP</span>
-                    <span class="skill-item">DigitalOcean</span>
-                    <span class="skill-item">Cross-Cloud Migration</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Azure Services</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Azure AKS</span>
-                    <span class="skill-item featured">Azure DevOps</span>
-                    <span class="skill-item">Azure Container Apps</span>
-                    <span class="skill-item">Azure Functions</span>
-                    <span class="skill-item">Azure SQL</span>
-                    <span class="skill-item">Azure Storage</span>
-                    <span class="skill-item">Azure Event Hubs</span>
-                    <span class="skill-item">Azure DNS</span>
-                    <span class="skill-item">Azure Firewall</span>
-                    <span class="skill-item">Azure VNet</span>
-                    <span class="skill-item">Azure App Gateway</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Kubernetes & Orchestration</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Kubernetes</span>
-                    <span class="skill-item featured">Docker</span>
-                    <span class="skill-item">Helm</span>
-                    <span class="skill-item">Podman</span>
-                    <span class="skill-item">Istio</span>
-                    <span class="skill-item">Cluster Management</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>CI/CD & DevOps</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Jenkins</span>
-                    <span class="skill-item featured">GitHub Actions</span>
-                    <span class="skill-item">GitLab CI/CD</span>
-                    <span class="skill-item">ArgoCD</span>
-                    <span class="skill-item">Flux</span>
-                    <span class="skill-item">Spinnaker</span>
-                    <span class="skill-item">Pipeline Optimization</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Databases & Performance</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Database Optimization</span>
-                    <span class="skill-item">PostgreSQL</span>
-                    <span class="skill-item">MySQL</span>
-                    <span class="skill-item">MongoDB</span>
-                    <span class="skill-item">Redis</span>
-                    <span class="skill-item">Queue Management</span>
-                    <span class="skill-item">Performance Tuning</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Observability & SRE</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Prometheus</span>
-                    <span class="skill-item featured">Grafana</span>
-                    <span class="skill-item featured">SLOs/SLIs</span>
-                    <span class="skill-item">Loki</span>
-                    <span class="skill-item">ELK Stack</span>
-                    <span class="skill-item">Jaeger</span>
-                    <span class="skill-item">Datadog</span>
-                    <span class="skill-item">Error Budgets</span>
-                    <span class="skill-item">Incident Response</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Infrastructure as Code</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Terraform</span>
-                    <span class="skill-item featured">Ansible</span>
-                    <span class="skill-item">CloudFormation</span>
-                    <span class="skill-item">Pulumi</span>
-                    <span class="skill-item">CDK</span>
-                    <span class="skill-item">Automation</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>Programming & Automation</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Python</span>
-                    <span class="skill-item">Node.js</span>
-                    <span class="skill-item">Go</span>
-                    <span class="skill-item">Java</span>
-                    <span class="skill-item">Bash</span>
-                    <span class="skill-item">TypeScript</span>
-                    <span class="skill-item">Clean Code</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3>SRE Leadership & Culture</h3>
-                <div class="skill-items">
-                    <span class="skill-item featured">Team Leadership</span>
-                    <span class="skill-item">SRE Culture</span>
-                    <span class="skill-item">Chaos Engineering</span>
-                    <span class="skill-item">Incident Management</span>
-                    <span class="skill-item">Blameless Postmortems</span>
-                    <span class="skill-item">Disaster Recovery</span>
-                    <span class="skill-item">Mentoring</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Professional Experience -->
-        <h2 class="section-title">Professional Experience</h2>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3 class="company-name">Senior CloudOps Engineer, Eptura</h3>
-                <span class="date-range">March 2024 - Present (Remote)</span>
-            </div>
-            
-            <div class="sre-highlight">
-                <strong>SRE Leadership & Culture:</strong>
-                <ul>
-                    <li>Led SRE team transformation, implementing modern SRE practices and reducing MTTR by 65%</li>
-                    <li>Established SLO-based culture with error budgets, improving service reliability to 99.99%</li>
-                    <li>Created comprehensive incident response playbooks and disaster recovery procedures</li>
-                </ul>
-            </div>
-
-            <div class="remote-work-highlight">
-                <strong>Remote Team Leadership:</strong>
-                <ul>
-                    <li>Successfully managed distributed SRE team across 4 time zones with 95% productivity</li>
-                    <li>Implemented async-first documentation practices reducing team blockers by 60%</li>
-                    <li>Established 4-hour CET overlap ensuring effective European collaboration</li>
-                </ul>
-            </div>
-
-            <ul class="achievements">
-                <li>Architected and led cross-cloud migration of 300+ servers from AWS to Azure/GCP, completing ahead of schedule with zero downtime</li>
-                <li>Optimized Kubernetes clusters across multiple cloud providers, improving resource utilization by 45% and reducing costs by $120K annually</li>
-                <li>Implemented comprehensive observability stack using Prometheus, Grafana, and Loki, achieving 99.99% uptime SLA</li>
-                <li>Designed and maintained Infrastructure-as-Code pipelines using Terraform and Ansible, reducing provisioning time by 80%</li>
-                <li>Enhanced CI/CD pipelines with ArgoCD and Azure DevOps, increasing deployment frequency by 300% while maintaining quality</li>
-                <li>Established database performance optimization protocols, reducing query response times by 40% and operational costs by 30%</li>
-                <li>Created automated disaster recovery solutions with 15-minute RTO and 5-minute RPO, exceeding industry standards</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3 class="company-name">DevOps/SRE Engineer, Rapidinnovation</h3>
-                <span class="date-range">August 2020 - March 2024 (Remote)</span>
-            </div>
-
-            <div class="sre-highlight">
-                <strong>SRE Foundation & Practices:</strong>
-                <ul>
-                    <li>Built SRE foundation from ground up, implementing monitoring, alerting, and incident response</li>
-                    <li>Developed automated scaling solutions maintaining 99.9% uptime during peak loads</li>
-                    <li>Created comprehensive documentation and knowledge base improving team efficiency by 40%</li>
-                </ul>
-            </div>
-
-            <ul class="achievements">
-                <li>Spearheaded Kubernetes adoption across multiple projects, improving application scalability by 500% and resource efficiency by 40%</li>
-                <li>Designed microservices architecture with comprehensive observability, reducing system complexity and accelerating feature delivery by 50%</li>
-                <li>Implemented automated CI/CD pipelines using Jenkins and GitLab, reducing deployment time by 80% and eliminating manual errors</li>
-                <li>Optimized multi-cloud infrastructure costs achieving $100K+ annual savings while maintaining performance SLAs</li>
-                <li>Built comprehensive monitoring solutions using Prometheus, Grafana, and ELK stack, reducing MTTR by 70%</li>
-                <li>Led Infrastructure-as-Code transformation using Terraform, increasing deployment accuracy by 90% and reducing provisioning time from days to hours</li>
-                <li>Conducted security audits and implemented DevSecOps practices, achieving SOC 2 and ISO 27001 compliance</li>
-                <li>Mentored junior engineers on SRE and DevOps practices, improving overall team productivity by 30%</li>
-                <li>Developed custom automation tools saving 100+ hours monthly in manual operations and reducing human errors by 95%</li>
-            </ul>
-        </div>
-
-        <!-- Notable Projects -->
-        <h2 class="section-title">Notable Projects</h2>
-        
-        <div class="project-item">
-            <h3 class="project-title">Multi-Cloud Migration & Optimization Platform</h3>
-            <p>Led enterprise-scale migration of 300+ servers across AWS, Azure, and GCP. Designed unified deployment platform with Terraform IaC, implemented ArgoCD for GitOps, and established comprehensive observability with Prometheus/Grafana. Achieved zero-downtime migration while reducing operational costs by 35% and improving system resilience through multi-cloud redundancy.</p>
-        </div>
-
-        <div class="project-item">
-            <h3 class="project-title">Ioffice - Enterprise Workplace Management Platform</h3>
-            <p>Architected and deployed scalable workplace management application on Azure AKS with comprehensive Azure services integration including Azure Firewall, Application Gateway, Azure SQL, and Azure Storage. Implemented Infrastructure-as-Code using Terraform and Azure DevOps pipelines. Optimized performance and costs achieving $100K annual savings while maintaining 99.9% uptime SLA for 10K+ concurrent users.</p>
-        </div>
-
-        <div class="project-item">
-            <h3 class="project-title">Blockchain Infrastructure - Secure Deployment Platform</h3>
-            <p>Designed and implemented secure blockchain application deployment on AWS EKS with advanced security measures. Integrated AWS Secrets Manager for cryptocurrency key management, implemented comprehensive monitoring, and established disaster recovery procedures. Ensured GDPR compliance and implemented zero-trust security model for handling sensitive financial data.</p>
-        </div>
-
-        <div class="project-item">
-            <h3 class="project-title">TheWearableInternet - IoT Platform Infrastructure</h3>
-            <p>Built scalable IoT platform infrastructure on AWS ECS supporting blockchain-based wearable applications. Implemented real-time data processing with AWS Event Hubs equivalent, established comprehensive logging and monitoring, and optimized for high-frequency IoT data ingestion. Achieved sub-100ms latency for real-time wearable data processing.</p>
-        </div>
-
-        <!-- Education -->
-        <h2 class="section-title">Education</h2>
-        <div class="education-item">
-            <h3 class="education-title">B.Tech. in Computer Science and Engineering</h3>
-            <p>ABES INSTITUTE OF TECHNOLOGY, GHAZIABAD (U.P)</p>
-            <span class="gpa">8.2 GPA</span>
-        </div>
-
-        <!-- Languages -->
-        <h2 class="section-title">Languages</h2>
-        <div class="languages">
-            <span class="language-item">Hindi: Native</span>
-            <span class="language-item">English: Proficient (Business Level)</span>
-        </div>
-
-        <!-- Additional Information -->
-        <h2 class="section-title">Additional Information</h2>
-        <div class="project-item">
-            <p><strong>Travel Flexibility:</strong> Available for travel to Italy and possess valid passport for international business travel</p>
-            <p><strong>Time Zone Compatibility:</strong> Flexible work schedule with 5 hour overlap with CET/CEST time zones</p>
-            <p><strong>Remote Work Excellence:</strong> 5 years of proven remote work experience with global teams, excellent communication skills, and self-driven work ethic</p>
         </div>
     </div>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <a href="#" class="nav-item active" onclick="showSection('overview')">Leadership Overview</a>
+        <a href="#" class="nav-item" onclick="showSection('experience')">Experience</a>
+        <a href="#" class="nav-item" onclick="showSection('technical')">Technical Expertise</a>
+        <a href="#" class="nav-item" onclick="showSection('projects')">Key Projects</a>
+        <a href="#" class="nav-item" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Overview Section -->
+    <section id="overview" class="content-section active">
+        <h2 class="section-title">🎯 Leadership & Technical Excellence</h2>
+        <p class="section-subtitle">
+            Proven DevOps leader combining deep technical expertise with strong people management skills. 
+            Building high-performing teams that deliver measurable business results.
+        </p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3 class="card-title">👥 Leadership Impact</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-value">15+</span>
+                        <span class="metric-label">Engineers Mentored</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">95%</span>
+                        <span class="metric-label">Team Retention</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">40%</span>
+                        <span class="metric-label">Faster Delivery</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">$2M+</span>
+                        <span class="metric-label">Budget Managed</span>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Built and led distributed DevOps teams across 3 time zones</li>
+                    <li>Established DevOps culture reducing deployment time by 85%</li>
+                    <li>Mentored 15+ engineers from junior to senior levels</li>
+                    <li>Led technical decision-making for $2M+ infrastructure budgets</li>
+                    <li>Drove cross-functional collaboration between Dev, Ops, and Security</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🚀 Technical Leadership</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-value">50+</span>
+                        <span class="metric-label">Services Deployed</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">100+</span>
+                        <span class="metric-label">Pipelines Built</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">25+</span>
+                        <span class="metric-label">K8s Clusters</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">100K+</span>
+                        <span class="metric-label">Users Served</span>
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Architected multi-cloud infrastructure serving 100K+ users</li>
+                    <li>Led migration of 300+ servers with zero downtime</li>
+                    <li>Implemented GitOps reducing deployment failures by 90%</li>
+                    <li>Built observability platform monitoring 500+ metrics</li>
+                    <li>Achieved SOC2 compliance through security-first DevOps</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3 class="highlight-title">🏆 Key Leadership Achievements</h3>
+            <div class="card-grid">
+                <div style="text-align: center;">
+                    <div class="tech-details">
+                        <span class="keyword">annual_savings:</span> <span class="value">"$280K+"</span><br>
+                        <span class="keyword">method:</span> <span class="value">"FinOps + automation"</span><br>
+                        <span class="keyword">impact:</span> <span class="value">"35% cost reduction"</span>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="tech-details">
+                        <span class="keyword">uptime_sla:</span> <span class="value">"99.99%"</span><br>
+                        <span class="keyword">environments:</span> <span class="value">"15+ production"</span><br>
+                        <span class="keyword">incidents:</span> <span class="value">"zero major outages"</span>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="tech-details">
+                        <span class="keyword">deployment_time:</span> <span class="value">"45min → 3min"</span><br>
+                        <span class="keyword">improvement:</span> <span class="value">"93% faster"</span><br>
+                        <span class="keyword">method:</span> <span class="value">"GitOps + automation"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
+        <h2 class="section-title">💼 Professional Experience</h2>
+        
+        <div class="experience-card">
+            <div class="company-header">
+                <div>
+                    <div class="company-name">Senior DevOps/SRE Engineer → DevOps Lead</div>
+                    <div class="company-subtitle">Eptura (Enterprise SaaS Platform)</div>
+                </div>
+                <div class="duration">March 2024 - Present</div>
+            </div>
+            
+            <div class="role-description">
+                Leading DevOps transformation for enterprise workplace management platform serving Fortune 500 companies.
+                <br><br>
+                <span class="team-size">Team: 8 Engineers</span> | 
+                <span class="team-size">Budget: $2M+</span> | 
+                <span class="team-size">Users: 100K+</span>
+            </div>
+
+            <div class="leadership-badges">
+                <span class="leadership-badge">Team Leadership</span>
+                <span class="leadership-badge">Technical Strategy</span>
+                <span class="leadership-badge">Budget Management</span>
+                <span class="leadership-badge">Stakeholder Management</span>
+                <span class="leadership-badge">Architecture Decisions</span>
+                <span class="leadership-badge">Process Improvement</span>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-value">$120K</span>
+                    <span class="metric-label">Annual Savings</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">75%</span>
+                    <span class="metric-label">Deploy Time ↓</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">99.99%</span>
+                    <span class="metric-label">Uptime SLA</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">300+</span>
+                    <span class="metric-label">Servers Migrated</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">8</span>
+                    <span class="metric-label">Team Members</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">95%</span>
+                    <span class="metric-label">Retention Rate</span>
+                </div>
+            </div>
+
+            <ul class="achievements">
+                <li><strong>Team Leadership:</strong> Built and led cross-functional DevOps team of 8 engineers, establishing career progression paths and achieving 95% retention rate</li>
+                <li><strong>Strategic Planning:</strong> Developed 18-month infrastructure roadmap aligned with business objectives, securing $2M+ budget approval from C-level executives</li>
+                <li><strong>Multi-Cloud Architecture:</strong> Led design and implementation of resilient AWS/Azure/GCP infrastructure, achieving 99.99% uptime SLA</li>
+                <li><strong>Cost Optimization Leadership:</strong> Implemented FinOps practices resulting in $120K annual savings through intelligent resource management</li>
+                <li><strong>Process Transformation:</strong> Established GitOps workflows with ArgoCD, reducing deployment time from 45 minutes to 3 minutes</li>
+                <li><strong>Security & Compliance:</strong> Led SOC2 compliance initiative, implementing automated security scanning and achieving certification in 6 months</li>
+                <li><strong>Mentorship Program:</strong> Created structured mentorship program, helping 5 junior engineers advance to mid-level positions within 12 months</li>
+                <li><strong>Executive Reporting:</strong> Regular C-level reporting on infrastructure performance, cost optimization, and team productivity metrics</li>
+            </ul>
+        </div>
+
+        <div class="experience-card">
+            <div class="company-header">
+                <div>
+                    <div class="company-name">DevOps/SRE Engineer → Senior Engineer</div>
+                    <div class="company-subtitle">Rapidinnovation (Blockchain & Fintech)</div>
+                </div>
+                <div class="duration">August 2020 - March 2024</div>
+            </div>
+            
+            <div class="leadership-badges">
+                <span class="leadership-badge">Technical Leadership</span>
+                <span class="leadership-badge">Team Development</span>
+                <span class="leadership-badge">Process Design</span>
+                <span class="leadership-badge">Knowledge Sharing</span>
+                <span class="leadership-badge">Infrastructure Design</span>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-value">$160K</span>
+                    <span class="metric-label">Cost Reduction</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">95%</span>
+                    <span class="metric-label">Automation Rate</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">70%</span>
+                    <span class="metric-label">MTTR ↓</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">50+</span>
+                    <span class="metric-label">Microservices</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">6</span>
+                    <span class="metric-label">Team Size</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">10+</span>
+                    <span class="metric-label">Engineers Mentored</span>
+                </div>
+            </div>
+
+            <ul class="achievements">
+                <li><strong>Technical Leadership Growth:</strong> Evolved from individual contributor to technical lead, managing 6 engineers and establishing DevOps best practices</li>
+                <li><strong>Infrastructure Modernization:</strong> Led complete containerization of 25+ legacy applications, implementing Kubernetes across all environments</li>
+                <li><strong>CI/CD Excellence:</strong> Built enterprise-grade pipelines using Jenkins, GitLab CI/CD, and GitHub Actions with automated testing</li>
+                <li><strong>Cost Management:</strong> Achieved $160K annual savings through cloud optimization, spot instances, and automated scaling</li>
+                <li><strong>Team Development:</strong> Mentored 10+ junior engineers, creating training programs reducing onboarding time by 40%</li>
+                <li><strong>Observability Implementation:</strong> Built comprehensive monitoring with ELK stack and Prometheus, reducing incident resolution by 70%</li>
+                <li><strong>Security Integration:</strong> Implemented DevSecOps practices with automated vulnerability scanning and compliance standards</li>
+                <li><strong>Knowledge Leadership:</strong> Established documentation standards and weekly tech talks, improving team collaboration</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section id="technical" class="content-section">
+        <h2 class="section-title">🛠️ Technical Expertise</h2>
+        <p class="section-subtitle">
+            Deep technical knowledge across cloud platforms, container orchestration, and infrastructure automation. 
+            Expert-level proficiency in enterprise-scale technologies.
+        </p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fab fa-aws"></i> Cloud Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">AWS (EKS, EC2, RDS)</span>
+                    <span class="skill-tag expert">Azure (AKS, DevOps)</span>
+                    <span class="skill-tag expert">Azure Container Apps</span>
+                    <span class="skill-tag expert">Azure Functions</span>
+                    <span class="skill-tag expert">Azure SQL Database</span>
+                    <span class="skill-tag expert">Azure Storage</span>
+                    <span class="skill-tag expert">Azure Event Hubs</span>
+                    <span class="skill-tag expert">Azure Firewall</span>
+                    <span class="skill-tag expert">Azure VNet</span>
+                    <span class="skill-tag expert">Azure App Gateway</span>
+                    <span class="skill-tag">GCP (GKE, Compute)</span>
+                    <span class="skill-tag">DigitalOcean</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-dharmachakra"></i> Container Orchestration</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Kubernetes</span>
+                    <span class="skill-tag expert">Docker</span>
+                    <span class="skill-tag expert">Helm Charts</span>
+                    <span class="skill-tag expert">Pod Debugging</span>
+                    <span class="skill-tag expert">Cluster Management</span>
+                    <span class="skill-tag">Istio Service Mesh</span>
+                    <span class="skill-tag">Container Security</span>
+                    <span class="skill-tag">Custom Operators</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code-branch"></i> CI/CD & DevOps</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Jenkins</span>
+                    <span class="skill-tag expert">GitHub Actions</span>
+                    <span class="skill-tag expert">GitLab CI/CD</span>
+                    <span class="skill-tag expert">ArgoCD</span>
+                    <span class="skill-tag expert">Azure DevOps</span>
+                    <span class="skill-tag">Pipeline as Code</span>
+                    <span class="skill-tag">GitOps</span>
+                    <span class="skill-tag">Automated Testing</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Infrastructure as Code</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Terraform</span>
+                    <span class="skill-tag expert">Ansible</span>
+                    <span class="skill-tag expert">State Management</span>
+                    <span class="skill-tag">CloudFormation</span>
+                    <span class="skill-tag">Pulumi</span>
+                    <span class="skill-tag">AWS CDK</span>
+                    <span class="skill-tag">Module Development</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Prometheus</span>
+                    <span class="skill-tag expert">Grafana</span>
+                    <span class="skill-tag expert">ELK Stack</span>
+                    <span class="skill-tag expert">Custom Dashboards</span>
+                    <span class="skill-tag">Jaeger Tracing</span>
+                    <span class="skill-tag">Loki Logging</span>
+                    <span class="skill-tag">AlertManager</span>
+                    <span class="skill-tag">SLO/SLI</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Databases & Performance</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">PostgreSQL</span>
+                    <span class="skill-tag expert">MySQL</span>
+                    <span class="skill-tag expert">MongoDB</span>
+                    <span class="skill-tag expert">Redis</span>
+                    <span class="skill-tag">Performance Tuning</span>
+                    <span class="skill-tag">Backup Automation</span>
+                    <span class="skill-tag">High Availability</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming & Automation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">Python</span>
+                    <span class="skill-tag expert">Bash</span>
+                    <span class="skill-tag expert">Go</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Custom Tools</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-dollar-sign"></i> Cost Optimization</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">FinOps</span>
+                    <span class="skill-tag expert">Resource Rightsizing</span>
+                    <span class="skill-tag expert">Reserved Instances</span>
+                    <span class="skill-tag">Auto-scaling</span>
+                    <span class="skill-tag">Cost Monitoring</span>
+                    <span class="skill-tag">Budget Management</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-shield-alt"></i> Security & Compliance</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag expert">DevSecOps</span>
+                    <span class="skill-tag expert">Security Scanning</span>
+                    <span class="skill-tag expert">SOC2 Compliance</span>
+                    <span class="skill-tag">Vulnerability Management</span>
+                    <span class="skill-tag">SAST/DAST</span>
+                    <span class="skill-tag">Security Hardening</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+        <h2 class="section-title">🚀 Key Projects & Leadership Impact</h2>
+        
+        <div class="project-card">
+            <h3 class="project-title">🌐 Enterprise Multi-Cloud Platform Leadership</h3>
+            <p class="project-tech"><strong>Leadership Role:</strong> Technical Lead | <strong>Team:</strong> 8 Engineers | <strong>Timeline:</strong> 6 months</p>
+            
+            <div class="project-results">
+                <strong>Leadership Results:</strong> 99.99% uptime | 35+ microservices | $120K savings | 8-person team | Zero major incidents
+            </div>
+            
+            <div class="tech-details">
+                <span class="keyword">project_scope:</span> <span class="value">"enterprise_multi_cloud"</span><br>
+                <span class="keyword">team_size:</span> <span class="value">8</span><br>
+                <span class="keyword">budget_managed:</span> <span class="value">"$500K"</span><br>
+                <span class="keyword">delivery_time:</span> <span class="value">"6_months"</span><br>
+                <span class="keyword">stakeholders:</span> <span class="value">["CTO", "VP_Engineering", "Security_Team"]</span>
+            </div>
+            
+            <ul class="achievements">
+                <li><strong>Team Leadership:</strong> Led cross-functional team of 8 engineers across multiple time zones, coordinating with security and development teams</li>
+                <li><strong>Architecture Decisions:</strong> Made critical technical decisions for multi-cloud Kubernetes deployment across AWS, Azure, and GCP</li>
+                <li><strong>Stakeholder Management:</strong> Regular reporting to C-level executives on project progress, risks, and budget utilization</li>
+                <li><strong>Risk Management:</strong> Identified and mitigated technical risks, ensuring zero downtime during migration of 300+ servers</li>
+                <li><strong>Process Implementation:</strong> Established GitOps workflows and monitoring standards adopted across the organization</li>
+                <li><strong>Cost Leadership:</strong> Negotiated with cloud providers and implemented cost optimization strategies saving $120K annually</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">💰 FinOps & Cost Optimization Initiative</h3>
+            <p class="project-tech"><strong>Leadership Role:</strong> Project Lead | <strong>Team:</strong> 5 Engineers | <strong>Timeline:</strong> 4 months</p>
+            
+            <div class="project-results">
+                <strong>Leadership Results:</strong> $180K annual savings | 35% cost reduction | 100% resource visibility | Executive recognition
+            </div>
+            
+            <div class="tech-details">
+                <span class="keyword">cost_savings:</span> <span class="value">"$180K_annual"</span><br>
+                <span class="keyword">roi:</span> <span class="value">"400%"</span><br>
+                <span class="keyword">team_coordination:</span> <span class="value">["DevOps", "Finance", "Engineering"]</span><br>
+                <span class="keyword">executive_sponsor:</span> <span class="value">"CFO"</span>
+            </div>
+            
+            <ul class="achievements">
+                <li><strong>Cross-Department Leadership:</strong> Coordinated with Finance, Engineering, and Executive teams to implement organization-wide cost optimization</li>
+                <li><strong>Strategy Development:</strong> Developed comprehensive FinOps strategy with automated cost monitoring and governance policies</li>
+                <li><strong>Team Training:</strong> Trained 15+ engineers on cost-conscious development practices and resource optimization techniques</li>
+                <li><strong>Tool Implementation:</strong> Led implementation of cost monitoring tools and automated rightsizing across 150+ instances</li>
+                <li><strong>Executive Reporting:</strong> Created executive dashboards and monthly cost review processes with C-level stakeholders</li>
+                <li><strong>Cultural Change:</strong> Established cost-awareness culture resulting in sustainable long-term savings</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">🔐 DevSecOps Transformation Leadership</h3>
+            <p class="project-tech"><strong>Leadership Role:</strong> Security Lead | <strong>Team:</strong> 6 Engineers + Security Team | <strong>Timeline:</strong> 8 months</p>
+            
+            <div class="project-results">
+                <strong>Leadership Results:</strong> SOC2 compliance achieved | 95% vulnerability reduction | 100% pipeline security | Zero security incidents
+            </div>
+            
+            <div class="tech-details">
+                <span class="keyword">compliance_achieved:</span> <span class="value">["SOC2", "ISO27001"]</span><br>
+                <span class="keyword">security_improvement:</span> <span class="value">"95%_vulnerability_reduction"</span><br>
+                <span class="keyword">team_structure:</span> <span class="value">"cross_functional"</span><br>
+                <span class="keyword">audit_result:</span> <span class="value">"zero_findings"</span>
+            </div>
+            
+            <ul class="achievements">
+                <li><strong>Security Leadership:</strong> Led organization-wide DevSecOps transformation involving Development, Operations, and Security teams</li>
+                <li><strong>Compliance Management:</strong> Managed SOC2 and ISO27001 compliance initiatives, working directly with auditors and executive leadership</li>
+                <li><strong>Process Design:</strong> Designed security-first development processes integrated into all CI/CD pipelines</li>
+                <li><strong>Tool Selection:</strong> Evaluated and implemented security scanning tools, managing vendor relationships and budget allocation</li>
+                <li><strong>Training & Adoption:</strong> Led company-wide security training programs ensuring 100% developer adoption of secure coding practices</li>
+                <li><strong>Risk Assessment:</strong> Conducted comprehensive security risk assessments and implemented mitigation strategies</li>
+            </ul>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">📊 Enterprise Monitoring Platform</h3>
+            <p class="project-tech"><strong>Leadership Role:</strong> Technical Lead | <strong>Team:</strong> 4 Engineers | <strong>Timeline:</strong> 3 months</p>
+            
+            <div class="project-results">
+                <strong>Leadership Results:</strong> 500+ metrics monitored | 70% MTTR reduction | 24/7 observability | 15+ applications covered
+            </div>
+            
+            <ul class="achievements">
+                <li><strong>Technical Vision:</strong> Defined comprehensive observability strategy covering infrastructure, applications, and business metrics</li>
+                <li><strong>Tool Integration:</strong> Led integration of Prometheus, Grafana, ELK stack, and custom alerting systems</li>
+                <li><strong>Team Coordination:</strong> Coordinated with application teams to implement monitoring standards and SLO definitions</li>
+                <li><strong>On-call Leadership:</strong> Established 24/7 on-call rotation and incident response procedures reducing MTTR by 70%</li>
+                <li><strong>Dashboard Strategy:</strong> Created executive and technical dashboards providing real-time visibility into system health</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <h2 class="section-title">📞 Let's Build Something Great Together</h2>
+        <p class="section-subtitle">
+            Ready to lead your DevOps transformation? Available for leadership roles, consulting, and technical discussions.
+        </p>
+
+        <div class="highlight-box">
+            <div class="highlight-title">🎯 What I Bring as a DevOps Leader</div>
+            <div class="card-grid">
+                <div>
+                    <h4 style="color: #00ffff; margin-bottom: 10px;">Team Leadership</h4>
+                    <ul class="achievements">
+                        <li>Built high-performing teams of 8+ engineers</li>
+                        <li>95% team retention rate</li>
+                        <li>Structured mentorship programs</li>
+                        <li>Cross-timezone coordination</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #00ffff; margin-bottom: 10px;">Technical Excellence</h4>
+                    <ul class="achievements">
+                        <li>99.99% uptime across 15+ environments</li>
+                        <li>$280K+ cost optimization delivered</li>
+                        <li>300+ servers migrated zero downtime</li>
+                        <li>Enterprise-scale architecture</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #00ffff; margin-bottom: 10px;">Business Impact</h4>
+                    <ul class="achievements">
+                        <li>$2M+ infrastructure budget management</li>
+                        <li>C-level stakeholder engagement</li>
+                        <li>Strategic roadmap development</li>
+                        <li>ROI-focused implementations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-grid">
+            <a href="mailto:hritikchaudhary016@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>hritikchaudhary016@gmail.com</p>
+                <p style="font-size: 12px; margin-top: 5px;">Response within 24 hours</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/" target="_blank" class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Professional Network</p>
+                <p style="font-size: 12px; margin-top: 5px;">Connect for opportunities</p>
+            </a>
+
+            <a href="https://github.com/hritikch24" target="_blank" class="contact-item">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Technical Portfolio</p>
+                <p style="font-size: 12px; margin-top: 5px;">View my code</p>
+            </a>
+
+            <a href="tel:+918859820935" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+91 8859820935</p>
+                <p style="font-size: 12px; margin-top: 5px;">Available for calls (IST)</p>
+            </a>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Bulandshahr, India</p>
+                <p style="font-size: 12px; margin-top: 5px;">Remote work specialist</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <h3>Availability</h3>
+                <p>UTC+5:30 (IST)</p>
+                <p style="font-size: 12px; margin-top: 5px;">Global team collaboration</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="text-align: center; margin-top: 30px;">
+            <h3 style="color: #00ffff; margin-bottom: 15px;">🚀 Ready to Lead Your DevOps Transformation?</h3>
+            <p style="color: #ffff00;">Let's discuss how I can help you build high-performing teams, achieve 99.99% uptime, and deliver measurable cost savings.</p>
+            <div class="tech-details" style="margin-top: 15px; text-align: left;">
+                <span class="keyword">leadership_focus:</span> <span class="value">["team_building", "technical_strategy", "cost_optimization"]</span><br>
+                <span class="keyword">availability:</span> <span class="value">"immediate_start"</span><br>
+                <span class="keyword">engagement_type:</span> <span class="value">["full_time", "consulting", "advisory"]</span><br>
+                <span class="keyword">remote_ready:</span> <span class="value">true</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Matrix rain effect
+        function initMatrix() {
+            const canvas = document.getElementById('matrix');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const chars = '0123456789ABCDEFabcdef${}[]()><_=+*&^%#@!';
+            const charArray = chars.split('');
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            
+            for (let x = 0; x < columns; x++) {
+                drops[x] = Math.random() * canvas.height;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff00';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(draw, 100);
+        }
+
+        // Initialize matrix on load
+        window.addEventListener('load', function() {
+            initMatrix();
+        });
+
+        // Responsive canvas
+        window.addEventListener('resize', function() {
+            const canvas = document.getElementById('matrix');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Skill tag interactions
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('skill-tag')) {
+                e.target.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 200);
+            }
+        });
+    </script>
 </body>
 </html>
