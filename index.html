@@ -364,21 +364,49 @@
             padding: 20px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .nav-menu::before {
+            content: '👆 Click to explore different sections';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+            box-shadow: var(--shadow-md);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
         }
 
         .nav-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 2px solid var(--border-color);
+            padding: 14px 28px;
             border-radius: 50px;
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 14px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 140px;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
         }
 
         .nav-item::before {
@@ -393,17 +421,32 @@
             z-index: -1;
         }
 
+        .nav-item::after {
+            content: '→';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-left: 4px;
+        }
+
         .nav-item:hover::before,
         .nav-item.active::before {
             left: 0;
         }
 
+        .nav-item:hover::after {
+            opacity: 1;
+        }
+
         .nav-item:hover,
         .nav-item.active {
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             border-color: var(--border-hover);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-item:active {
+            transform: translateY(-1px);
         }
 
         /* Content Sections */
@@ -871,6 +914,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        ⬆️ Use navigation above to explore sections
+    </div>
+
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-shapes">
@@ -926,13 +974,34 @@
 
     <!-- Navigation -->
     <nav class="nav-menu">
-        <a href="#" class="nav-item active" onclick="showSection('overview')">Leadership Overview</a>
-        <a href="#" class="nav-item" onclick="showSection('about')">About Me</a>
-        <a href="#" class="nav-item" onclick="showSection('experience')">Experience</a>
-        <a href="#" class="nav-item" onclick="showSection('technical')">Technical Expertise</a>
-        <a href="#" class="nav-item" onclick="showSection('projects')">Key Projects</a>
-        <a href="#" class="nav-item" onclick="showSection('testimonials')">Testimonials</a>
-        <a href="#" class="nav-item" onclick="showSection('contact')">Contact</a>
+        <a href="#" class="nav-item active" onclick="showSection('overview')">
+            <i class="fas fa-chart-line"></i>
+            Leadership Overview
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('about')">
+            <i class="fas fa-user"></i>
+            About Me
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('experience')">
+            <i class="fas fa-briefcase"></i>
+            Experience
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('technical')">
+            <i class="fas fa-cogs"></i>
+            Technical Skills
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('projects')">
+            <i class="fas fa-rocket"></i>
+            Key Projects
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('testimonials')">
+            <i class="fas fa-quote-left"></i>
+            Testimonials
+        </a>
+        <a href="#" class="nav-item" onclick="showSection('contact')">
+            <i class="fas fa-envelope"></i>
+            Contact
+        </a>
     </nav>
 
     <!-- About Me Section -->
@@ -1365,78 +1434,133 @@
     <section id="projects" class="content-section">
         <h2 class="section-title">🚀 Key Projects & Leadership Impact</h2>
         
+        <!-- Eptura Projects -->
         <div class="card">
             <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                🌐 Enterprise Multi-Cloud Platform Leadership
+                🏢 iOffice & ManagerPlus - Enterprise Workplace Management Platform
             </h3>
             <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--primary-blue); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Technical Lead</span>
+                <span style="background: var(--primary-blue); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">DevOps Lead</span>
                 <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">8 Engineers</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">6 Months</span>
-                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">$500K Budget</span>
+                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Eptura</span>
+                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Fortune 500 Clients</span>
             </div>
             
             <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success-green); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--success-green); margin-bottom: 12px; font-size: 1.1rem;">Leadership Results:</h4>
-                <p style="color: var(--text-secondary);">99.9% uptime | 35+ microservices | $120K savings | 8-person team | Zero major incidents</p>
+                <h4 style="color: var(--success-green); margin-bottom: 12px; font-size: 1.1rem;">Project Results:</h4>
+                <p style="color: var(--text-secondary);">99.9% uptime | $120K annual savings | Zero downtime deployments | 100K+ end users</p>
+            </div>
+
+            <h4 style="color: var(--text-accent); margin: 20px 0 12px 0;">Technology Stack:</h4>
+            <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Azure Cloud</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Kubernetes</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">ArgoCD</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Flux</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Terraform</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">.NET Deployment</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Windows VMs</span>
             </div>
             
             <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Leadership Achievements:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Team Leadership:</strong> Led cross-functional team of 8 engineers across multiple time zones</li>
-                <li style="margin-bottom: 12px;"><strong>Architecture Decisions:</strong> Made critical technical decisions for multi-cloud Kubernetes deployment</li>
-                <li style="margin-bottom: 12px;"><strong>Stakeholder Management:</strong> Regular reporting to C-level executives on project progress and risks</li>
-                <li style="margin-bottom: 12px;"><strong>Cost Leadership:</strong> Negotiated with cloud providers and implemented optimization strategies</li>
+                <li style="margin-bottom: 12px;"><strong>Multi-Platform Architecture:</strong> Led containerization of .NET applications and migration from Windows VMs to Kubernetes</li>
+                <li style="margin-bottom: 12px;"><strong>GitOps Implementation:</strong> Architected GitOps workflows using ArgoCD and Flux for automated deployments</li>
+                <li style="margin-bottom: 12px;"><strong>Azure Infrastructure:</strong> Designed and managed enterprise Azure infrastructure with Terraform IaC</li>
+                <li style="margin-bottom: 12px;"><strong>Team Leadership:</strong> Built and led 8-person DevOps team supporting workplace management solutions for Fortune 500 companies</li>
+                <li style="margin-bottom: 12px;"><strong>Cost Optimization:</strong> Achieved $120K annual savings through Azure resource optimization and automation</li>
             </ul>
         </div>
 
+        <!-- Rapidinnovation Projects -->
         <div class="card">
             <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                💰 FinOps & Cost Optimization Initiative
+                🚀 Multi-Project DevOps Leadership - Blockchain & Fintech
             </h3>
             <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Project Lead</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">5 Engineers</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">4 Months</span>
-                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">CFO Sponsored</span>
+                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Senior DevOps Engineer</span>
+                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">6 Engineers</span>
+                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Rapidinnovation</span>
+                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">300+ Employees</span>
             </div>
-            
+
+            <div style="background: rgba(124, 58, 237, 0.1); border: 1px solid var(--primary-purple); border-radius: 12px; padding: 20px; margin: 20px 0;">
+                <h4 style="color: var(--primary-purple); margin-bottom: 12px; font-size: 1.1rem;">Project Portfolio:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <div>
+                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">🌊 Flush</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Blockchain infrastructure platform</p>
+                    </div>
+                    <div>
+                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">⌚ Slabs - The Wearable Internet</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">IoT & wearable technology platform</p>
+                    </div>
+                    <div>
+                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">💰 Tenfi</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Fintech & payment solutions</p>
+                    </div>
+                    <div>
+                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">⚔️ PulseWar</h5>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Gaming & entertainment platform</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="color: var(--text-accent); margin: 20px 0 12px 0;">Technology Stack & Infrastructure:</h4>
+            <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Jenkins</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GitHub Actions</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">BitBucket Pipelines</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GitLab CI/CD</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">AWS</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Azure</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GCP</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">DigitalOcean</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Linode</span>
+                <span style="background: var(--bg-secondary); border: 1px solid var(--warning-yellow); color: var(--warning-yellow); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Organization GitLab</span>
+            </div>
+
             <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--warning-yellow); border-radius: 12px; padding: 20px; margin: 20px 0;">
                 <h4 style="color: var(--warning-yellow); margin-bottom: 12px; font-size: 1.1rem;">Leadership Results:</h4>
-                <p style="color: var(--text-secondary);">$180K annual savings | 35% cost reduction | 400% ROI | Executive recognition</p>
+                <p style="color: var(--text-secondary);">$160K cost reduction | 95% automation rate | 70% MTTR reduction | 300+ employee GitLab management</p>
             </div>
             
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Achievements:</h4>
+            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Technical Achievements:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Cross-Department Leadership:</strong> Coordinated with Finance, Engineering, and Executive teams</li>
-                <li style="margin-bottom: 12px;"><strong>Strategy Development:</strong> Developed comprehensive FinOps strategy with automated monitoring</li>
-                <li style="margin-bottom: 12px;"><strong>Team Training:</strong> Trained 5+ engineers on cost-conscious development practices</li>
-                <li style="margin-bottom: 12px;"><strong>Cultural Change:</strong> Established cost-awareness culture for sustainable savings</li>
+                <li style="margin-bottom: 12px;"><strong>CI/CD Expertise:</strong> Implemented and managed Jenkins, GitHub Actions, BitBucket Pipelines, and GitLab CI/CD across multiple projects</li>
+                <li style="margin-bottom: 12px;"><strong>Multi-Cloud Leadership:</strong> Architected and managed infrastructure across AWS, Azure, GCP, DigitalOcean, and Linode platforms</li>
+                <li style="margin-bottom: 12px;"><strong>GitLab Administration:</strong> Hosted and managed organization-wide GitLab instance supporting 300+ employees</li>
+                <li style="margin-bottom: 12px;"><strong>Blockchain Infrastructure:</strong> Built scalable infrastructure for Flush blockchain platform and cryptocurrency applications</li>
+                <li style="margin-bottom: 12px;"><strong>IoT & Gaming Platforms:</strong> Designed cloud infrastructure for Slabs wearable technology and PulseWar gaming platform</li>
+                <li style="margin-bottom: 12px;"><strong>Fintech Solutions:</strong> Implemented secure, compliant infrastructure for Tenfi payment processing systems</li>
+                <li style="margin-bottom: 12px;"><strong>Team Mentorship:</strong> Led technical knowledge sharing and mentored 5+ junior engineers across diverse technology stacks</li>
             </ul>
         </div>
 
+        <!-- Cost Optimization Project -->
         <div class="card">
             <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                🔐 DevSecOps Transformation Leadership
+                💰 Organization-Wide FinOps & Infrastructure Optimization
             </h3>
             <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--error-red); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Security Lead</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">6+ Engineers</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">8 Months</span>
-                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Cross-functional</span>
+                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Cost Optimization Lead</span>
+                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Cross-functional</span>
+                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Both Organizations</span>
+                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Executive Sponsored</span>
             </div>
             
-            <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--error-red); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--error-red); margin-bottom: 12px; font-size: 1.1rem;">Security Results:</h4>
-                <p style="color: var(--text-secondary);">SOC2 compliance achieved | 95% vulnerability reduction | Zero security incidents | Zero audit findings</p>
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success-green); border-radius: 12px; padding: 20px; margin: 20px 0;">
+                <h4 style="color: var(--success-green); margin-bottom: 12px; font-size: 1.1rem;">Cost Optimization Results:</h4>
+                <p style="color: var(--text-secondary);">$280K+ total savings | 35% cost reduction | 400% ROI | Multi-cloud optimization</p>
             </div>
             
             <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Achievements:</h4>
             <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Security Leadership:</strong> Led organization-wide DevSecOps transformation across all teams</li>
-                <li style="margin-bottom: 12px;"><strong>Compliance Management:</strong> Managed SOC2 and ISO27001 compliance with auditors and executives</li>
-                <li style="margin-bottom: 12px;"><strong>Process Design:</strong> Designed security-first development processes for all CI/CD pipelines</li>
-                <li style="margin-bottom: 12px;"><strong>Training & Adoption:</strong> Led company-wide security training ensuring 100% developer adoption</li>
+                <li style="margin-bottom: 12px;"><strong>Multi-Cloud Cost Strategy:</strong> Developed comprehensive cost optimization strategies across AWS, Azure, GCP, and other cloud providers</li>
+                <li style="margin-bottom: 12px;"><strong>Resource Rightsizing:</strong> Implemented automated monitoring and rightsizing across 500+ instances and services</li>
+                <li style="margin-bottom: 12px;"><strong>Reserved Instance Strategy:</strong> Optimized reserved instance purchases and spot instance utilization</li>
+                <li style="margin-bottom: 12px;"><strong>Team Training:</strong> Educated engineering teams on cost-conscious development and deployment practices</li>
+                <li style="margin-bottom: 12px;"><strong>Executive Reporting:</strong> Created cost visibility dashboards and monthly executive reviews</li>
             </ul>
         </div>
     </section>
@@ -1702,14 +1826,31 @@
             });
         }
 
-        // Show/hide back to top button
+        // Show/hide scroll indicator and back to top button
         window.addEventListener('scroll', function() {
             const backToTop = document.getElementById('backToTop');
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            
             if (window.pageYOffset > 300) {
                 backToTop.classList.add('visible');
+                scrollIndicator.classList.remove('show');
             } else {
                 backToTop.classList.remove('visible');
+                scrollIndicator.classList.add('show');
             }
+        });
+
+        // Show scroll indicator initially
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            setTimeout(() => {
+                scrollIndicator.classList.add('show');
+            }, 3000); // Show after 3 seconds
+
+            // Hide after 10 seconds
+            setTimeout(() => {
+                scrollIndicator.classList.remove('show');
+            }, 10000);
         });
 
         // Animated counter
