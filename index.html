@@ -3,955 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hritik Chaudhary - DevOps Lead & Senior SRE | Scaling Infrastructure | Leading Teams</title>
-    <meta name="description" content="DevOps Lead with 5+ years experience leading high-performing teams, managing $2M+ budgets, achieving 99.99% uptime. Expert in AWS, Kubernetes, and cost optimization.">
-    <meta name="keywords" content="DevOps Engineer, Site Reliability Engineer, Kubernetes, AWS, Team Leadership, Infrastructure as Code, CI/CD">
+    <title>Hritik Chaudhary - DevOps Lead & Senior SRE | AWS, Kubernetes, Team Leadership</title>
+    <meta name="description" content="5+ years of DevOps leadership. Expert in Kubernetes, AWS, CI/CD, and cost optimization. Led teams managing $2M+ budgets with 99.99% uptime.">
+    <meta name="keywords" content="DevOps Lead, Senior SRE, Kubernetes, AWS, Terraform, Team Leadership">
     <meta name="author" content="Hritik Chaudhary">
-    <meta property="og:title" content="Hritik Chaudhary - DevOps Lead & Senior SRE">
-    <meta property="og:description" content="Leading DevOps transformation with proven track record of $280K+ cost savings and 99.99% uptime">
-    <meta property="og:type" content="website">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Hritik Chaudhary - DevOps Lead & Senior SRE">
+    <meta property="og:description" content="Leading high-performance DevOps teams with expertise in AWS, Kubernetes, and infrastructure automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mycv.masterops.xyz">
+    <meta property="og:image" content="https://mycv.masterops.xyz/preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=JetBrains+Mono&display=swap" as="font" crossorigin>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hritik Chaudhary",
+      "jobTitle": "DevOps Lead & Senior SRE Engineer",
+      "url": "https://mycv.masterops.xyz",
+      "sameAs": [
+        "https://linkedin.com/in/hritik-chaudhary-24a8a4193",
+        "https://github.com/hritikch24"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Eptura"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
     <style>
-        :root {
-            --primary-blue: #2563eb;
-            --primary-purple: #7c3aed;
-            --accent-cyan: #06b6d4;
-            --accent-orange: #f59e0b;
-            --success-green: #10b981;
-            --warning-yellow: #f59e0b;
-            --error-red: #ef4444;
-            
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --bg-card: rgba(30, 41, 59, 0.8);
-            --bg-glass: rgba(15, 23, 42, 0.9);
-            
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --text-accent: #38bdf8;
-            
-            --border-color: rgba(59, 130, 246, 0.3);
-            --border-hover: rgba(59, 130, 246, 0.6);
-            
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+    :root {
+        /* Color Scheme */
+        --primary-blue: #2563eb;
+        --primary-purple: #7c3aed;
+        --accent-cyan: #06b6d4;
+        --success-green: #10b981;
+        --warning-yellow: #f59e0b;
+        --error-red: #ef4444;
+        
+        /* Dark Theme (Default) */
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-card: rgba(30, 41, 59, 0.8);
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border-color: rgba(59, 130, 246, 0.3);
+        
+        /* Light Theme */
+        --bg-primary-light: #f8fafc;
+        --bg-secondary-light: #e2e8f0;
+        --text-primary-light: #1e293b;
+        --text-muted-light: #64748b;
+    }
+
+    /* Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+    
+    /* Skip to Content (Accessibility) */
+    .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: var(--primary-blue);
+        color: white;
+        padding: 12px;
+        z-index: 1000;
+    }
+    .skip-link:focus {
+        left: 0;
+    }
+
+    /* Terminal Header (Hero Section) */
+    .terminal-header {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        margin: 20px;
+        max-width: 1200px;
+        margin: 2rem auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .terminal-top {
+        background: var(--bg-secondary);
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .terminal-buttons {
+        display: flex;
+        gap: 8px;
+    }
+    .btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .btn.close { background: #ff5f56; }
+    .btn.minimize { background: #ffbd2e; }
+    .btn.maximize { background: #27ca3f; }
+    .terminal-title {
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+    .terminal-content {
+        padding: 40px;
+    }
+
+    /* Hero Section */
+    .hero-text {
+        text-align: center;
+    }
+    .hero-tagline {
+        background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .name {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+    }
+    .title {
+        font-size: 1.5rem;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+    .subtitle {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    /* Stats Section */
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+    }
+    .stat-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+    }
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 8px;
+    }
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    /* Navigation */
+    .nav-menu {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+        max-width: 1000px;
+    }
+    .nav-item {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        padding: 12px 24px;
+        border-radius: 50px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .nav-item:hover, .nav-item.active {
+        background: var(--primary-blue);
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    /* Sections */
+    .content-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 40px;
+        margin: 2rem auto;
+        max-width: 1000px;
+        display: none;
+    }
+    .content-section.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Skills Heatmap (New!) */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+    }
+    .skill-category {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+    }
+    .skill-tag {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+    }
+    .skill-tag.expert {
+        background: rgba(16, 185, 129, 0.2);
+        color: var(--success-green);
+        border: 1px solid var(--success-green);
+    }
+    .skill-tag.advanced {
+        background: rgba(6, 182, 212, 0.2);
+        color: var(--accent-cyan);
+        border: 1px solid var(--accent-cyan);
+    }
+
+    /* Experience Cards */
+    .experience-card {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+    .experience-company {
+        color: var(--accent-cyan);
+        font-weight: 600;
+    }
+    .experience-date {
+        color: var(--text-muted);
+    }
+    .experience-highlights {
+        margin-top: 16px;
+    }
+    .experience-highlights li {
+        margin-bottom: 8px;
+        color: var(--text-secondary);
+    }
+
+    /* Interactive Terminal (Enhanced) */
+    .terminal-section {
+        background: #000;
+        border-radius: 8px;
+        margin: 2rem 0;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    .terminal-body {
+        padding: 20px;
+    }
+    .terminal-line {
+        color: var(--success-green);
+        margin-bottom: 8px;
+    }
+    .terminal-prompt {
+        color: var(--accent-cyan);
+    }
+    .terminal-cursor {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background: var(--success-green);
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+    }
+
+    /* Footer & Contact */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+    }
+    .contact-item {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .contact-item:hover {
+        transform: translateY(-5px);
+    }
+    .contact-item i {
+        font-size: 2rem;
+        color: var(--accent-cyan);
+        margin-bottom: 12px;
+    }
+
+    /* Light Theme */
+    [data-theme="light"] {
+        --bg-primary: var(--bg-primary-light);
+        --bg-secondary: var(--bg-secondary-light);
+        --text-primary: var(--text-primary-light);
+        --text-muted: var(--text-muted-light);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .terminal-header, .content-section {
+            margin: 1rem;
+            padding: 20px;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a202c 50%, var(--bg-secondary) 100%);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, var(--primary-purple), var(--primary-blue));
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: var(--bg-glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 12px 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: var(--text-accent);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.05);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .back-to-top.visible {
-            display: flex;
-            animation: fadeInUp 0.3s ease;
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.03;
-        }
-
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .shape {
-            position: absolute;
-            background: linear-gradient(45deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-
-        .shape:nth-child(1) { width: 60px; height: 60px; left: 10%; animation-delay: 0s; }
-        .shape:nth-child(2) { width: 40px; height: 40px; left: 20%; animation-delay: -5s; }
-        .shape:nth-child(3) { width: 80px; height: 80px; left: 30%; animation-delay: -10s; }
-        .shape:nth-child(4) { width: 50px; height: 50px; left: 70%; animation-delay: -15s; }
-        .shape:nth-child(5) { width: 70px; height: 70px; left: 80%; animation-delay: -20s; }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-
-        /* Terminal Header */
-        .terminal-header {
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            margin: 20px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-xl);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .terminal-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(124, 58, 237, 0.1));
-            z-index: -1;
-        }
-
-        .terminal-top {
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .terminal-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.2);
-        }
-
-        .btn.close { background: linear-gradient(135deg, #ff5f56, #ff3b30); }
-        .btn.minimize { background: linear-gradient(135deg, #ffbd2e, #ff9500); }
-        .btn.maximize { background: linear-gradient(135deg, #27ca3f, #34c759); }
-
-        .terminal-title {
-            color: var(--text-secondary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .terminal-content {
-            padding: 40px;
-        }
-
-        /* Hero Section */
-        .hero-text {
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-tagline {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .name {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--text-primary), var(--text-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
-            position: relative;
-        }
-
-        .name::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 2px;
-        }
-
-        .title {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Stats Row with Animation */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .stat-item {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .stat-item:hover::before {
-            left: 100%;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Navigation */
         .nav-menu {
-            display: flex;
-            gap: 16px;
-            margin: 40px 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-lg);
-            position: relative;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            justify-content: flex-start;
         }
-
-        .nav-menu::before {
-            content: '👇 Click to explore different sections';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            animation: pulse 2s infinite;
-            box-shadow: var(--shadow-md);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.05); }
-        }
-
-        .nav-item {
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
-            border: 2px solid var(--border-color);
-            padding: 14px 28px;
-            border-radius: 50px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 140px;
-            justify-content: center;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-item::after {
-            content: '→';
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            margin-left: 4px;
-        }
-
-        .nav-item:hover::before,
-        .nav-item.active::before {
-            left: 0;
-        }
-
-        .nav-item:hover::after {
-            opacity: 1;
-        }
-
-        .nav-item:hover,
-        .nav-item.active {
-            color: white;
-            transform: translateY(-3px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .nav-item:active {
-            transform: translateY(-1px);
-        }
-
-        /* Content Sections */
-        .content-section {
-            margin: 40px 20px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 48px;
-            display: none;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(124, 58, 237, 0.05));
-            z-index: -1;
-        }
-
-        .content-section.active {
-            display: block;
-            animation: slideInUp 0.6s ease-out;
-        }
-
-        @keyframes slideInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        .section-title {
-            background: linear-gradient(135deg, var(--text-accent), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 32px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .card-title {
-            color: var(--text-accent);
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .card-subtitle {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        /* Progress Bars for Skills */
-        .skill-progress {
-            margin: 16px 0;
-        }
-
-        .skill-progress-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .skill-progress-bar {
-            width: 100%;
-            height: 8px;
-            background: var(--bg-secondary);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 4px;
-            transition: width 1s ease-in-out;
-            position: relative;
-        }
-
-        .skill-progress-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Testimonials Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-hover);
-        }
-
-        .testimonial-quote {
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            line-height: 1.7;
-        }
-
-        .testimonial-quote::before {
-            content: '"';
-            font-size: 2rem;
-            color: var(--accent-cyan);
-            position: absolute;
-            top: 16px;
-            left: 16px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-
-        .testimonial-info h4 {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .testimonial-info p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        /* Interactive Terminal Section */
-        .terminal-section {
-            background: #000;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin: 32px 0;
-            overflow: hidden;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .terminal-header-bar {
-            background: var(--bg-secondary);
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .terminal-body {
-            padding: 20px;
-            min-height: 200px;
-            position: relative;
-        }
-
-        .terminal-line {
-            color: var(--success-green);
-            margin-bottom: 8px;
-            animation: typewriter 0.5s steps(40) forwards;
-            opacity: 0;
-        }
-
-        .terminal-prompt {
-            color: var(--accent-cyan);
-        }
-
-        .terminal-output {
-            color: var(--text-secondary);
-            margin-left: 20px;
-        }
-
-        .terminal-cursor {
-            display: inline-block;
-            width: 10px;
-            height: 18px;
-            background: var(--success-green);
-            animation: blink 1s infinite;
-        }
-
-        @keyframes typewriter {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* Contact Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 28px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .contact-item:hover::before {
-            left: 100%;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .contact-item i {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 16px;
-        }
-
-        .contact-item h3 {
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Download Resume Button */
-        .download-resume {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin: 24px auto;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .download-resume:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .terminal-header {
-                margin: 10px;
-            }
-
-            .terminal-content {
-                padding: 24px;
-            }
-
-            .name {
-                font-size: 2.5rem;
-            }
-
-            .nav-menu {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-                margin: 20px 10px;
-            }
-
-            .content-section {
-                margin: 20px 10px;
-                padding: 24px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-
-            .back-to-top {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        /* Dark/Light theme support */
-        [data-theme="light"] {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #e2e8f0;
-            --bg-tertiary: #cbd5e1;
-            --bg-card: rgba(255, 255, 255, 0.8);
-            --bg-glass: rgba(248, 250, 252, 0.9);
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-        }
+    }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon" id="theme-icon"></i>
-    </div>
+    <!-- Skip to Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="scrollToTop()" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
     </button>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator">
-    </div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-    </div>
-
-    <!-- Terminal Header -->
-    <div class="terminal-header" id="hero">
+    <!-- Terminal Header (Hero) -->
+    <header class="terminal-header" id="hero">
         <div class="terminal-top">
             <div class="terminal-buttons">
-                <div class="btn close"></div>
-                <div class="btn minimize"></div>
-                <div class="btn maximize"></div>
+                <div class="btn close" aria-label="Close terminal"></div>
+                <div class="btn minimize" aria-label="Minimize terminal"></div>
+                <div class="btn maximize" aria-label="Maximize terminal"></div>
             </div>
             <div class="terminal-title">hritik@devops-lead:~$ whoami --leadership --expertise</div>
         </div>
         <div class="terminal-content">
             <div class="hero-text">
-                <div class="hero-tagline">DevOps Engineer | Cloud Specialist | Team Leader</div>
+                <p class="hero-tagline">DevOps Leader | Cloud Architect | Team Builder</p>
                 <h1 class="name">Hritik Chaudhary</h1>
                 <p class="title">DevOps Lead & Senior SRE Engineer</p>
                 <p class="subtitle">
-                    Leading high-performing DevOps teams to deliver scalable, reliable infrastructure solutions. 
-                    Proven expertise in automating complex systems, optimizing costs, and mentoring engineers 
-                    to achieve 99.99% uptime across enterprise-scale platforms.
+                    Leading high-performance DevOps teams to build scalable, resilient infrastructure. 
+                    Expert in Kubernetes, AWS, and cost optimization with 5+ years of leadership experience.
                 </p>
                 <div class="stats-row">
                     <div class="stat-item">
-                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-number" data-count="8">0</span>
                         <span class="stat-label">Team Members Led</span>
                     </div>
                     <div class="stat-item">
@@ -963,1089 +433,156 @@
                         <span class="stat-label">Servers Migrated</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">99.9%</span>
+                        <span class="stat-number">99.99%</span>
                         <span class="stat-label">Uptime SLA</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- Navigation -->
-    <nav class="nav-menu">
-        <a href="#" class="nav-item active" onclick="showSection('overview')">
+    <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#overview" class="nav-item active" onclick="showSection('overview')">
             <i class="fas fa-chart-line"></i>
-            Leadership Overview
+            Overview
         </a>
-        <a href="#" class="nav-item" onclick="showSection('about')">
-            <i class="fas fa-user"></i>
-            About Me
-        </a>
-        <a href="#" class="nav-item" onclick="showSection('experience')">
+        <a href="#experience" class="nav-item" onclick="showSection('experience')">
             <i class="fas fa-briefcase"></i>
             Experience
         </a>
-        <a href="#" class="nav-item" onclick="showSection('technical')">
+        <a href="#skills" class="nav-item" onclick="showSection('skills')">
             <i class="fas fa-cogs"></i>
-            Technical Skills
+            Skills
         </a>
-        <a href="#" class="nav-item" onclick="showSection('projects')">
+        <a href="#projects" class="nav-item" onclick="showSection('projects')">
             <i class="fas fa-rocket"></i>
-            Key Projects
+            Projects
         </a>
-        <a href="#" class="nav-item" onclick="showSection('testimonials')">
-            <i class="fas fa-quote-left"></i>
-            Testimonials
-        </a>
-        <a href="#" class="nav-item" onclick="showSection('contact')">
+        <a href="#contact" class="nav-item" onclick="showSection('contact')">
             <i class="fas fa-envelope"></i>
             Contact
         </a>
     </nav>
 
-    <!-- About Me Section -->
-    <section id="about" class="content-section">
-        <h2 class="section-title">👋 About Me</h2>
-        <p class="section-subtitle">
-            Passionate DevOps leader with 5+ years of experience transforming how teams build, deploy, and scale applications.
-        </p>
-
-        <div class="card-grid">
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-user-tie"></i> My Journey</h3>
-                <p style="color: var(--text-secondary); line-height: 1.8;">
-                    Started as a DevOps Engineer and evolved into a technical leader managing cross-functional teams. 
-                    I believe in empowering engineers through mentorship, automation, and creating a culture of 
-                    continuous improvement. My approach combines deep technical expertise with strong people management 
-                    skills to deliver exceptional business results.
-                </p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="content-section active">
+            <h2>Leadership & Technical Excellence</h2>
+            <p>Proven track record in DevOps transformation, team leadership, and infrastructure optimization.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">AWS</span>
+                        <span class="skill-tag expert">Kubernetes</span>
+                        <span class="skill-tag advanced">Azure</span>
+                        <span class="skill-tag expert">Terraform</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>CI/CD & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">Jenkins</span>
+                        <span class="skill-tag advanced">ArgoCD</span>
+                        <span class="skill-tag expert">GitHub Actions</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-heart"></i> What Drives Me</h3>
-                <ul style="color: var(--text-secondary); line-height: 1.8;">
-                    <li style="margin-bottom: 12px;">🚀 <strong>Innovation:</strong> Finding creative solutions to complex infrastructure challenges</li>
-                    <li style="margin-bottom: 12px;">👥 <strong>Mentorship:</strong> Helping junior engineers grow into confident professionals</li>
-                    <li style="margin-bottom: 12px;">⚡ <strong>Efficiency:</strong> Automating manual processes to free up time for strategic work</li>
-                    <li style="margin-bottom: 12px;">🎯 <strong>Impact:</strong> Delivering measurable business value through technology</li>
+            <!-- Interactive Terminal -->
+            <div class="terminal-section" aria-label="Interactive terminal">
+                <div class="terminal-body" id="terminal">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span> whoami
+                    </div>
+                    <div class="terminal-line">
+                        Hritik Chaudhary - DevOps Lead | Senior SRE
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span> <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="content-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>DevOps Lead</h3>
+                    <span class="experience-date">2024 - Present</span>
+                </div>
+                <p class="experience-company">Eptura</p>
+                <ul class="experience-highlights">
+                    <li>Led team of 8 engineers managing $2M+ infrastructure</li>
+                    <li>Achieved 99.99% uptime SLA for enterprise SaaS platform</li>
+                    <li>Saved $120K/year through cloud cost optimization</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Interactive Terminal -->
-        <div class="terminal-section">
-            <div class="terminal-header-bar">
-                <div class="btn close"></div>
-                <div class="btn minimize"></div>
-                <div class="btn maximize"></div>
-                <span style="margin-left: 16px; color: var(--text-secondary); font-size: 12px;">Interactive Bio Terminal</span>
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <a href="mailto:hritikchaudhary016@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>hritikchaudhary016@gmail.com</p>
+                </a>
+                <a href="https://linkedin.com/in/hritik-chaudhary-24a8a4193" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect professionally</p>
+                </a>
             </div>
-            <div class="terminal-body" id="terminal">
-                <div class="terminal-line">
-                    <span class="terminal-prompt">hritik@devops-lead:~$</span> whoami --detailed
-                </div>
-                <div class="terminal-output" id="terminal-output">
-                    <div class="terminal-line">Loading profile...</div>
-                </div>
-                <div class="terminal-prompt">hritik@devops-lead:~$ <span class="terminal-cursor"></span></div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Overview Section -->
-    <section id="overview" class="content-section active">
-        <h2 class="section-title">🎯 Leadership & Technical Excellence</h2>
-        <p class="section-subtitle">
-            Proven DevOps leader combining deep technical expertise with strong people management skills. 
-            Building high-performing teams that deliver measurable business results.
-        </p>
-
-        <div class="card-grid">
-            <div class="card">
-                <h3 class="card-title">👥 Leadership Impact</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Team Retention Rate</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Delivery Speed Improvement</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Budget Management Efficiency</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 92%"></div>
-                    </div>
-                </div>
-                <ul style="color: var(--text-secondary); margin-top: 24px;">
-                    <li style="margin-bottom: 8px;">✓ Built and led distributed DevOps teams across 3 time zones</li>
-                    <li style="margin-bottom: 8px;">✓ Established DevOps culture reducing deployment time by 85%</li>
-                    <li style="margin-bottom: 8px;">✓ Mentored 5+ engineers from junior to senior levels</li>
-                    <li style="margin-bottom: 8px;">✓ Led technical decision-making for $2M+ infrastructure budgets</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title">🚀 Technical Leadership</h3>
-                <div class="stats-row" style="margin-bottom: 24px;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan);">50+</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Services Deployed</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan);">100+</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Pipelines Built</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan);">25+</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">K8s Clusters</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan);">100K+</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Users Served</div>
-                    </div>
-                </div>
-                <ul style="color: var(--text-secondary);">
-                    <li style="margin-bottom: 8px;">✓ Architected multi-cloud infrastructure serving 100K+ users</li>
-                    <li style="margin-bottom: 8px;">✓ Led migration of 300+ servers with zero downtime</li>
-                    <li style="margin-bottom: 8px;">✓ Expert in troubleshooting containerized applications and K8s clusters</li>
-                    <li style="margin-bottom: 8px;">✓ Achieved SOC2 compliance through security-first DevOps</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="content-section">
-        <h2 class="section-title">💼 Professional Experience</h2>
-        
-        <div class="card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap;">
-                <div>
-                    <h3 style="color: var(--text-accent); font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">
-                        Senior DevOps/SRE Engineer → DevOps Lead
-                    </h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 12px;">
-                        Eptura (Enterprise SaaS Platform)
-                    </p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <span style="background: var(--primary-blue); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Team: 8 Engineers</span>
-                        <span style="background: var(--accent-cyan); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Budget: $2M+</span>
-                        <span style="background: var(--success-green); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Users: 100K+</span>
-                    </div>
-                </div>
-                <div style="color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem;">
-                    March 2024 - Present
-                </div>
-            </div>
-            
-            <div style="background: rgba(6, 182, 212, 0.1); border-left: 4px solid var(--accent-cyan); padding: 20px; border-radius: 0 12px 12px 0; margin: 20px 0;">
-                <p style="color: var(--text-secondary); font-style: italic; line-height: 1.7;">
-                    Leading DevOps transformation for enterprise workplace management platform serving Fortune 500 companies.
-                    Responsible for technical strategy, team development, and infrastructure reliability.
-                </p>
-            </div>
-
-            <div class="stats-row" style="margin: 24px 0;">
-                <div class="stat-item">
-                    <span class="stat-number">$120K</span>
-                    <span class="stat-label">Annual Savings</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">75%</span>
-                    <span class="stat-label">Deploy Time ↓</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">99.99%</span>
-                    <span class="stat-label">Uptime SLA</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Retention Rate</span>
-                </div>
-            </div>
-
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0; font-size: 1.1rem;">Key Achievements:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Team Leadership:</strong> Built and led cross-functional DevOps team of 8 engineers, establishing career progression paths and achieving 95% retention rate</li>
-                <li style="margin-bottom: 12px;"><strong>Strategic Planning:</strong> Developed 18-month infrastructure roadmap aligned with business objectives, securing $2M+ budget approval from C-level executives</li>
-                <li style="margin-bottom: 12px;"><strong>Multi-Cloud Architecture:</strong> Led design and implementation of resilient AWS/Azure/GCP infrastructure, achieving 99.99% uptime SLA</li>
-                <li style="margin-bottom: 12px;"><strong>Cost Optimization Leadership:</strong> Implemented FinOps practices resulting in $120K annual savings through intelligent resource management</li>
-                <li style="margin-bottom: 12px;"><strong>Process Transformation:</strong> Established GitOps workflows with ArgoCD, reducing deployment time from 45 minutes to 3 minutes</li>
-            </ul>
-        </div>
-
-        <div class="card" style="margin-top: 32px;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap;">
-                <div>
-                    <h3 style="color: var(--text-accent); font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">
-                        DevOps/SRE Engineer → Senior Engineer
-                    </h3>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem;">
-                        Rapidinnovation (Blockchain & Fintech)
-                    </p>
-                </div>
-                <div style="color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem;">
-                    August 2020 - March 2024
-                </div>
-            </div>
-
-            <div class="stats-row" style="margin: 24px 0;">
-                <div class="stat-item">
-                    <span class="stat-number">$160K</span>
-                    <span class="stat-label">Cost Reduction</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Automation Rate</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">70%</span>
-                    <span class="stat-label">MTTR ↓</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Engineers Mentored</span>
-                </div>
-            </div>
-
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0; font-size: 1.1rem;">Key Achievements:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Technical Leadership Growth:</strong> Evolved from individual contributor to technical lead, managing 6 engineers and establishing DevOps best practices</li>
-                <li style="margin-bottom: 12px;"><strong>Infrastructure Modernization:</strong> Led complete containerization of 25+ legacy applications, implementing Kubernetes across all environments</li>
-                <li style="margin-bottom: 12px;"><strong>Cost Management:</strong> Achieved $160K annual savings through cloud optimization, spot instances, and automated scaling</li>
-                <li style="margin-bottom: 12px;"><strong>Team Development:</strong> Mentored 5+ junior engineers, creating training programs reducing onboarding time by 40%</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Technical Expertise Section -->
-    <section id="technical" class="content-section">
-        <h2 class="section-title">🛠️ Technical Expertise</h2>
-        <p class="section-subtitle">
-            Deep technical knowledge across cloud platforms, container orchestration, and infrastructure automation. 
-            Expert-level proficiency in enterprise-scale technologies.
-        </p>
-
-        <div class="card-grid">
-            <div class="card">
-                <h3 class="card-title"><i class="fab fa-aws"></i> Cloud Platforms & AWS Debugging</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>AWS Services Troubleshooting (EKS, EC2, RDS)</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Azure Services Debugging (AKS, VMs)</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Multi-Cloud Infrastructure Issues</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 85%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3><i class="fas fa-dharmachakra"></i> Container Orchestration & Debugging</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Kubernetes Debugging & Troubleshooting</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Docker Container Debugging</span>
-                        <span>98%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 98%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Pod & Service Mesh Troubleshooting</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-code-branch"></i> CI/CD & DevOps</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Jenkins</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>GitHub Actions</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>ArgoCD (GitOps)</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 85%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-server"></i> Infrastructure as Code</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Terraform</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Ansible</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>CloudFormation</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 80%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-chart-line"></i> Monitoring & Troubleshooting</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Production Debugging & Root Cause Analysis</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Prometheus & Grafana Diagnostics</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>ELK Stack Log Analysis</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 88%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title"><i class="fas fa-code"></i> Programming & Automation</h3>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Python</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Bash Scripting</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-progress">
-                    <div class="skill-progress-label">
-                        <span>Go</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-progress-bar">
-                        <div class="skill-progress-fill" style="width: 75%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
-        <h2 class="section-title">🚀 Key Projects & Leadership Impact</h2>
-        
-        <!-- Eptura Projects -->
-        <div class="card">
-            <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                🏢 iOffice & ManagerPlus - Enterprise Workplace Management Platform
-            </h3>
-            <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--primary-blue); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">DevOps Lead</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">8 Engineers</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Eptura</span>
-                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Fortune 500 Clients</span>
-            </div>
-            
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success-green); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--success-green); margin-bottom: 12px; font-size: 1.1rem;">Project Results:</h4>
-                <p style="color: var(--text-secondary);">99.9% uptime | $120K annual savings | Zero downtime deployments | 100K+ end users</p>
-            </div>
-
-            <h4 style="color: var(--text-accent); margin: 20px 0 12px 0;">Technology Stack:</h4>
-            <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Azure Cloud</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Kubernetes</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">ArgoCD</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Flux</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Terraform</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">.NET Deployment</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--primary-blue); color: var(--primary-blue); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Windows VMs</span>
-            </div>
-            
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Leadership Achievements:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Kubernetes Architecture:</strong> Led containerization of .NET applications and migration from Windows VMs to Kubernetes</li>
-                <li style="margin-bottom: 12px;"><strong>Production Debugging:</strong> Expert in troubleshooting K8s clusters, pod failures, and service mesh issues</li>
-                <li style="margin-bottom: 12px;"><strong>GitOps Implementation:</strong> Architected GitOps workflows using ArgoCD and Flux for automated deployments</li>
-                <li style="margin-bottom: 12px;"><strong>Azure Infrastructure:</strong> Designed and managed enterprise Azure infrastructure with Terraform IaC</li>
-                <li style="margin-bottom: 12px;"><strong>Team Leadership:</strong> Built and led 8-person DevOps team supporting workplace management solutions for Fortune 500 companies</li>
-                <li style="margin-bottom: 12px;"><strong>Cost Optimization:</strong> Achieved $120K annual savings through Azure resource optimization and automation</li>
-            </ul>
-        </div>
-
-        <!-- Rapidinnovation Projects -->
-        <div class="card">
-            <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                🚀 Multi-Project DevOps Leadership - Blockchain & Fintech
-            </h3>
-            <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Senior DevOps Engineer</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">6 Engineers</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Rapidinnovation</span>
-                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">300+ Employees</span>
-            </div>
-
-            <div style="background: rgba(124, 58, 237, 0.1); border: 1px solid var(--primary-purple); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--primary-purple); margin-bottom: 12px; font-size: 1.1rem;">Project Portfolio:</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-                    <div>
-                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">🌊 Flush</h5>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Blockchain infrastructure platform</p>
-                    </div>
-                    <div>
-                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">⌚ Slabs - The Wearable Internet</h5>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">IoT & wearable technology platform</p>
-                    </div>
-                    <div>
-                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">💰 Tenfi</h5>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Fintech & payment solutions</p>
-                    </div>
-                    <div>
-                        <h5 style="color: var(--accent-cyan); margin-bottom: 8px;">⚔️ PulseWar</h5>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Gaming & entertainment platform</p>
-                    </div>
-                </div>
-            </div>
-
-            <h4 style="color: var(--text-accent); margin: 20px 0 12px 0;">Technology Stack & Debugging Expertise:</h4>
-            <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Jenkins Debugging</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">K8s Troubleshooting</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GitHub Actions</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">BitBucket Pipelines</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GitLab CI/CD</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">AWS Services Debug</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Azure Diagnostics</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">GCP Troubleshooting</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">DigitalOcean</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--success-green); color: var(--success-green); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Linode</span>
-                <span style="background: var(--bg-secondary); border: 1px solid var(--warning-yellow); color: var(--warning-yellow); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem;">Organization GitLab</span>
-            </div>
-
-            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--warning-yellow); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--warning-yellow); margin-bottom: 12px; font-size: 1.1rem;">Leadership Results:</h4>
-                <p style="color: var(--text-secondary);">$160K cost reduction | 95% automation rate | 70% MTTR reduction | 300+ employee GitLab management</p>
-            </div>
-            
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Technical Achievements:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Advanced Debugging Expertise:</strong> Specialized in troubleshooting complex Kubernetes clusters, pod failures, and containerized application issues</li>
-                <li style="margin-bottom: 12px;"><strong>CI/CD Pipeline Troubleshooting:</strong> Expert in debugging Jenkins, GitHub Actions, BitBucket Pipelines, and GitLab CI/CD failures</li>
-                <li style="margin-bottom: 12px;"><strong>Multi-Cloud Problem Resolution:</strong> Skilled in diagnosing AWS, Azure, GCP, DigitalOcean, and Linode service issues</li>
-                <li style="margin-bottom: 12px;"><strong>GitLab Enterprise Management:</strong> Hosted and managed organization-wide GitLab instance supporting 300+ employees</li>
-                <li style="margin-bottom: 12px;"><strong>Blockchain Infrastructure Debugging:</strong> Built and troubleshooted scalable infrastructure for Flush blockchain platform</li>
-                <li style="margin-bottom: 12px;"><strong>IoT & Gaming Platform Issues:</strong> Resolved complex cloud infrastructure problems for Slabs wearable technology and PulseWar gaming</li>
-                <li style="margin-bottom: 12px;"><strong>Fintech System Reliability:</strong> Debugged and maintained secure, compliant infrastructure for Tenfi payment processing</li>
-                <li style="margin-bottom: 12px;"><strong>Production Incident Response:</strong> Led root cause analysis and resolution of critical production issues across diverse technology stacks</li>
-            </ul>
-        </div>
-
-        <!-- Cost Optimization Project -->
-        <div class="card">
-            <h3 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 16px;">
-                💰 Organization-Wide FinOps & Infrastructure Optimization
-            </h3>
-            <div style="display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--warning-yellow); color: black; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Cost Optimization Lead</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Cross-functional</span>
-                <span style="background: var(--success-green); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Both Organizations</span>
-                <span style="background: var(--primary-purple); color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem;">Executive Sponsored</span>
-            </div>
-            
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success-green); border-radius: 12px; padding: 20px; margin: 20px 0;">
-                <h4 style="color: var(--success-green); margin-bottom: 12px; font-size: 1.1rem;">Cost Optimization Results:</h4>
-                <p style="color: var(--text-secondary);">$280K+ total savings | 35% cost reduction | 400% ROI | Multi-cloud optimization</p>
-            </div>
-            
-            <h4 style="color: var(--text-accent); margin: 24px 0 16px 0;">Key Achievements:</h4>
-            <ul style="color: var(--text-secondary); line-height: 1.8;">
-                <li style="margin-bottom: 12px;"><strong>Multi-Cloud Cost Strategy:</strong> Developed comprehensive cost optimization strategies across AWS, Azure, GCP, and other cloud providers</li>
-                <li style="margin-bottom: 12px;"><strong>Resource Rightsizing:</strong> Implemented automated monitoring and rightsizing across 500+ instances and services</li>
-                <li style="margin-bottom: 12px;"><strong>Reserved Instance Strategy:</strong> Optimized reserved instance purchases and spot instance utilization</li>
-                <li style="margin-bottom: 12px;"><strong>Team Training:</strong> Educated engineering teams on cost-conscious development and deployment practices</li>
-                <li style="margin-bottom: 12px;"><strong>Executive Reporting:</strong> Created cost visibility dashboards and monthly executive reviews</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="content-section">
-        <h2 class="section-title">💬 What Colleagues Say</h2>
-        <p class="section-subtitle">
-            Testimonials and endorsements from team members, managers, and cross-functional partners.
-        </p>
-
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "Hritik's expertise in debugging complex Kubernetes issues was invaluable during the Flush project. 
-                    When our blockchain nodes were failing intermittently, he quickly identified the root cause in our 
-                    pod networking configuration. His systematic approach to troubleshooting saved us weeks of downtime."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">JS</div>
-                    <div class="testimonial-info">
-                        <h4>Jonathan Smith</h4>
-                        <p>Lead Developer, Flush Project - Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "During the Slabs wearable project, Hritik's multi-cloud debugging skills were exceptional. 
-                    He resolved critical AWS EKS issues that were affecting our IoT data pipeline and optimized 
-                    our container orchestration. His technical depth in cloud debugging is outstanding."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">ER</div>
-                    <div class="testimonial-info">
-                        <h4>Emily Rogers</h4>
-                        <p>IoT Engineer, Slabs Project - Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "Hritik managed our entire GitLab infrastructure for 300+ employees at Rapidinnovation. 
-                    His expertise in CI/CD pipeline debugging helped us achieve 95% deployment success rate. 
-                    He could troubleshoot Jenkins, GitLab, and GitHub Actions issues faster than anyone I've worked with."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">VK</div>
-                    <div class="testimonial-info">
-                        <h4>Vineet Kulkarni</h4>
-                        <p>DevOps Manager, Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "For the Tenfi fintech platform, Hritik's debugging expertise was crucial for our payment processing 
-                    reliability. He diagnosed and resolved complex Azure service issues and container problems that were 
-                    affecting transaction processing. His attention to detail in production troubleshooting is remarkable."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MW</div>
-                    <div class="testimonial-info">
-                        <h4>Michael Wilson</h4>
-                        <p>Backend Lead, Tenfi Project - Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "Working with Hritik on the PulseWar gaming platform was incredible. He debugged our Kubernetes 
-                    scaling issues during high-traffic gaming sessions and optimized our AWS infrastructure. 
-                    His ability to troubleshoot real-time performance problems under pressure is exceptional."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">SJ</div>
-                    <div class="testimonial-info">
-                        <h4>Sarah Johnson</h4>
-                        <p>Game Developer, PulseWar - Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <p class="testimonial-quote">
-                    "As CTO at Rapidinnovation, I can confidently say Hritik's debugging and troubleshooting skills 
-                    are world-class. Across Flush, Slabs, Tenfi, and PulseWar projects, he consistently resolved 
-                    complex infrastructure issues that other engineers couldn't solve. A true debugging expert."
-                </p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">DR</div>
-                    <div class="testimonial-info">
-                        <h4>David Rogers</h4>
-                        <p>CTO, Rapidinnovation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section">
-        <h2 class="section-title">📞 Let's Build Something Great Together</h2>
-        <p class="section-subtitle">
-            Ready to lead your DevOps transformation? Available for leadership roles, consulting, and technical discussions.
-        </p>
-
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="#" class="download-resume" onclick="downloadResume()">
-                <i class="fas fa-download"></i>
-                Download Resume
-            </a>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px; margin: 32px 0;">
-            <h3 style="color: var(--text-accent); margin-bottom: 24px; text-align: center; font-size: 1.3rem;">
-                🎯 What I Bring as a DevOps Leader
-            </h3>
-            <div class="card-grid">
-                <div>
-                    <h4 style="color: var(--accent-cyan); margin-bottom: 16px; font-size: 1.1rem;">👥 Team Leadership</h4>
-                    <ul style="color: var(--text-secondary); line-height: 1.8;">
-                        <li style="margin-bottom: 8px;">✓ Built high-performing teams of 8+ engineers</li>
-                        <li style="margin-bottom: 8px;">✓ 95% team retention rate</li>
-                        <li style="margin-bottom: 8px;">✓ Structured mentorship programs</li>
-                        <li style="margin-bottom: 8px;">✓ Cross-timezone coordination</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-cyan); margin-bottom: 16px; font-size: 1.1rem;">🚀 Technical Excellence</h4>
-                    <ul style="color: var(--text-secondary); line-height: 1.8;">
-                        <li style="margin-bottom: 8px;">✓ 99.9% uptime across 15+ environments</li>
-                        <li style="margin-bottom: 8px;">✓ Expert in Kubernetes & AWS debugging</li>
-                        <li style="margin-bottom: 8px;">✓ $280K+ cost optimization delivered</li>
-                        <li style="margin-bottom: 8px;">✓ 300+ servers migrated zero downtime</li>
-                        <li style="margin-bottom: 8px;">✓ Enterprise-scale troubleshooting</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-cyan); margin-bottom: 16px; font-size: 1.1rem;">💼 Business Impact</h4>
-                    <ul style="color: var(--text-secondary); line-height: 1.8;">
-                        <li style="margin-bottom: 8px;">✓ $2M+ infrastructure budget management</li>
-                        <li style="margin-bottom: 8px;">✓ C-level stakeholder engagement</li>
-                        <li style="margin-bottom: 8px;">✓ Strategic roadmap development</li>
-                        <li style="margin-bottom: 8px;">✓ ROI-focused implementations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-grid">
-            <a href="mailto:hritikchaudhary016@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p>hritikchaudhary016@gmail.com</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">Response within 24 hours</p>
-            </a>
-
-            <a href="https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/" target="_blank" class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <p>Professional Network</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">Connect for opportunities</p>
-            </a>
-
-            <a href="https://github.com/hritikch24" target="_blank" class="contact-item">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <p>Technical Portfolio</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">View my code</p>
-            </a>
-
-            <a href="tel:+918859820935" class="contact-item">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <p>+91 8859820935</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">Available for calls (IST)</p>
-            </a>
-
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                <p>Bulandshahr, India</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">Remote work specialist</p>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <h3>Availability</h3>
-                <p>Immediate Start</p>
-                <p style="font-size: 12px; margin-top: 8px; color: var(--text-muted);">Global team collaboration</p>
-            </div>
-        </div>
-
-        <div style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1)); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px; margin-top: 40px; text-align: center;">
-            <h3 style="color: var(--text-accent); margin-bottom: 16px; font-size: 1.4rem;">
-                🚀 Ready to Lead Your DevOps Transformation?
-            </h3>
-            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.1rem;">
-                Let's discuss how I can help you build high-performing teams, achieve 99.99% uptime, and deliver measurable cost savings.
-            </p>
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <span style="background: var(--primary-blue); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Team Building</span>
-                <span style="background: var(--accent-cyan); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Technical Strategy</span>
-                <span style="background: var(--success-green); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Cost Optimization</span>
-                <span style="background: var(--primary-purple); color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;">Remote Ready</span>
-            </div>
-        </div>
-    </section>
-
+    <!-- JavaScript -->
     <script>
-        // Theme Toggle
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (body.getAttribute('data-theme') === 'light') {
-                body.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeIcon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'light');
-            }
-        }
+    // Theme Toggle
+    function toggleTheme() {
+        document.body.setAttribute('data-theme', 
+            document.body.getAttribute('data-theme') === 'light' ? '' : 'light');
+        localStorage.setItem('theme', document.body.getAttribute('data-theme') || 'dark');
+    }
 
-        // Load saved theme
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (savedTheme === 'light') {
-                document.body.setAttribute('data-theme', 'light');
-                themeIcon.className = 'fas fa-sun';
-            }
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+    }
+
+    // Navigation
+    function showSection(sectionId) {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.remove('active');
         });
+        document.getElementById(sectionId).classList.add('active');
+    }
 
-        // Navigation functionality
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            document.getElementById(sectionId).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // Back to top functionality
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Show/hide scroll indicator and back to top button
-        window.addEventListener('scroll', function() {
-            const backToTop = document.getElementById('backToTop');
-            const scrollIndicator = document.getElementById('scrollIndicator');
-            
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-                scrollIndicator.classList.remove('show');
-            } else {
-                backToTop.classList.remove('visible');
-                scrollIndicator.classList.add('show');
-            }
+    // Animated counters
+    function animateCounters() {
+        document.querySelectorAll('[data-count]').forEach(counter => {
+            const target = +counter.getAttribute('data-count');
+            let count = 0;
+            const interval = setInterval(() => {
+                if (count >= target) clearInterval(interval);
+                counter.textContent = count;
+                count += Math.ceil(target / 50);
+            }, 20);
         });
+    }
 
-        // Show scroll indicator initially
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollIndicator = document.getElementById('scrollIndicator');
-            setTimeout(() => {
-                scrollIndicator.classList.add('show');
-            }, 3000); // Show after 3 seconds
-
-            // Hide after 10 seconds
-            setTimeout(() => {
-                scrollIndicator.classList.remove('show');
-            }, 10000);
-        });
-
-        // Animated counter
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-count'));
-            const duration = 2000;
-            const start = 0;
-            const startTime = performance.now();
-
-            function updateCounter(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const current = Math.floor(progress * target);
-                
-                element.textContent = current;
-                
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                }
-            }
-            
-            requestAnimationFrame(updateCounter);
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('[data-count]');
-                    counters.forEach(counter => {
-                        if (!counter.hasAttribute('data-animated')) {
-                            animateCounter(counter);
-                            counter.setAttribute('data-animated', 'true');
-                        }
-                    });
-                    
-                    // Animate skill progress bars
-                    const progressBars = entry.target.querySelectorAll('.skill-progress-fill');
-                    progressBars.forEach(bar => {
-                        bar.style.width = bar.style.width;
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.content-section, .terminal-header');
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-
-        // Interactive Terminal
-        function initTerminal() {
-            const terminalOutput = document.getElementById('terminal-output');
-            const commands = [
-                'Loading profile...',
-                'Name: Hritik Chaudhary',
-                'Role: DevOps Lead & Senior SRE',
-                'Experience: 5+ years',
-                'Team Leadership: 5+ engineers mentored',
-                'Cost Savings: $280K+ delivered',
-                'Specialties: Kubernetes, AWS, Team Building, Debugging',
-                'Status: Available for new opportunities',
-                'Profile loaded successfully! ✓'
-            ];
-            
-            let i = 0;
-            function typeCommand() {
-                if (i < commands.length) {
-                    const line = document.createElement('div');
-                    line.className = 'terminal-line';
-                    line.style.animationDelay = i * 0.3 + 's';
-                    line.textContent = commands[i];
-                    terminalOutput.appendChild(line);
-                    i++;
-                    setTimeout(typeCommand, 500);
-                }
-            }
-            
-            // Start terminal animation when about section is visible
-            setTimeout(typeCommand, 1000);
-        }
-
-        // Download Resume functionality
-        function downloadResume() {
-            // Create a simple text resume
-            const resumeContent = `
-HRITIK CHAUDHARY
-DevOps Lead & Senior SRE Engineer
-Email: hritikchaudhary016@gmail.com
-Phone: +91 8859820935
-LinkedIn: https://www.linkedin.com/in/hritik-chaudhary-24a8a4193/
-GitHub: https://github.com/hritikch24
-
-PROFESSIONAL SUMMARY
-DevOps leader with 5+ years of experience building and leading high-performing teams. 
-Expert in debugging Kubernetes clusters, AWS services, and containerized applications.
-Proven track record of $280K+ cost savings, 99.9% uptime, and successful mentorship of 5+ engineers.
-
-EXPERIENCE
-DevOps Lead | Eptura | March 2024 - Present
-- Leading team of 8 engineers, managing $2M+ budget
-- Expert in troubleshooting K8s clusters and Azure services
-- Achieved 99.9% uptime across enterprise platform
-- Delivered $120K annual cost savings through FinOps
-
-Senior DevOps Engineer | Rapidinnovation | August 2020 - March 2024
-- Led infrastructure modernization and containerization
-- Expert in debugging complex multi-cloud environments
-- Mentored 5+ junior engineers
-- Achieved $160K annual cost reduction
-
-TECHNICAL SKILLS
-- Cloud Platforms: AWS, Azure, GCP (Expert debugging & troubleshooting)
-- Container Orchestration: Kubernetes, Docker (Advanced debugging)
-- CI/CD: Jenkins, GitHub Actions, ArgoCD (Pipeline troubleshooting)
-- Infrastructure as Code: Terraform, Ansible
-- Monitoring: Prometheus, Grafana, ELK Stack (Root cause analysis)
-- Programming: Python, Bash, Go
-
-KEY ACHIEVEMENTS
-- Expert in Kubernetes cluster debugging and AWS services troubleshooting
-- 99.9% uptime SLA across 15+ production environments
-- $280K+ total cost savings through optimization
-- 300+ servers migrated with zero downtime
-- SOC2 compliance achieved in 6 months
-- 95% team retention rate
-            `;
-            
-            const blob = new Blob([resumeContent], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Hritik_Chaudhary_DevOps_Lead_Resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-        }
-
-        // Initialize terminal when about section loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const aboutSection = document.getElementById('about');
-            const aboutObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.hasAttribute('data-terminal-loaded')) {
-                        initTerminal();
-                        entry.target.setAttribute('data-terminal-loaded', 'true');
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            aboutObserver.observe(aboutSection);
-        });
-
-        // Smooth section transitions
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = this.getAttribute('onclick').match(/'(.*)'/)[1];
-                showSection(target);
-                
-                // Smooth scroll to content
-                setTimeout(() => {
-                    document.querySelector('.content-section.active').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 100);
-            });
-        });
-
-        // Add hover effects to cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card, .contact-item, .testimonial-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-        });
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        animateCounters();
+    });
     </script>
 </body>
 </html>
