@@ -134,6 +134,70 @@
             box-shadow: var(--shadow-glow);
         }
 
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 999;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(37, 211, 102, 0.9);
+            }
+        }
+
+        /* Calendly Button */
+        .calendly-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+            color: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .calendly-float:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6);
+        }
+
+        .calendly-float i {
+            font-size: 20px;
+        }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -2100,5 +2164,21 @@ KEY ACHIEVEMENTS
             });
         });
     </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917017323865?text=Hi%20Hritik%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Calendly Float Button -->
+    <a href="#" class="calendly-float" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hritikchaudhary016/30min'});return false;" title="Schedule a Meeting">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Schedule Meeting</span>
+    </a>
+
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly badge widget end -->
 </body>
 </html>
